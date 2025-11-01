@@ -1,0 +1,14 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle -->
+  <circle cx="30" cy="30" r="30" fill="#333333"/>
+  <circle cx="30" cy="30" r="28" fill="#333333" stroke="#FFFFFF" stroke-width="1"/>
+  
+  <!-- Inner design - stylized mountain/MHM logo -->
+  <g transform="translate(15, 18)">
+    <!-- M letter stylized as mountains -->
+    <path d="M2 20L8 8L14 20L20 8L26 20V22H24V12L20 18L16 12L12 18L8 12V22H6V20H2Z" fill="#FFFFFF"/>
+    <path d="M8 24C8 24 10 22 15 22C20 22 22 24 22 24" stroke="#FFFFFF" stroke-width="1" fill="none"/>
+    <!-- Additional mountain details -->
+    <circle cx="15" cy="15" r="1" fill="#FFFFFF" opacity="0.6"/>
+  </g>
+</svg>

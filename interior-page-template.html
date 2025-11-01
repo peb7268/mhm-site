@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}} - Mile High Marketing</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+</head>
+<body>
+    <!-- Interior Page Container -->
+    <div class="interior-page">
+        <!-- Header Navigation -->
+        <header class="interior-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="images/mhm-logo.svg" alt="Mile High Marketing Logo" class="logo-image">
+                        </a>
+                    </div>
+                    <nav class="nav-menu">
+                        <a href="index.html" class="nav-link">HOME</a>
+                        <a href="about.html" class="nav-link">ABOUT</a>
+                        <a href="insights.html" class="nav-link">INSIGHTS</a>
+                        <a href="services.html" class="nav-link">SERVICES</a>
+                        <a href="#contact" class="nav-link cta-link">CONTACT</a>
+                    </nav>
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Hero Section -->
+        <section class="page-hero">
+            <div class="hero-background">
+                <div class="floating-circles">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="hero-content">
+                    <nav class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span class="separator">/</span>
+                        <span class="current">{{BREADCRUMB_CURRENT}}</span>
+                    </nav>
+                    <h1 class="page-title">{{PAGE_MAIN_TITLE}}</h1>
+                    <p class="page-subtitle">{{PAGE_SUBTITLE}}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Content Sections - Replace with specific content blocks -->
+                
+                <!-- Introduction Section -->
+                <section class="content-section intro-section">
+                    <div class="section-content">
+                        <div class="content-grid">
+                            <div class="content-text">
+                                <h2 class="section-title">{{INTRO_TITLE}}</h2>
+                                <div class="rich-text">
+                                    <p class="lead">{{INTRO_LEAD_TEXT}}</p>
+                                    <p>{{INTRO_BODY_TEXT}}</p>
+                                </div>
+                            </div>
+                            <div class="content-media">
+                                <div class="media-placeholder">
+                                    <img src="{{INTRO_IMAGE_URL}}" alt="{{INTRO_IMAGE_ALT}}" class="section-image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features/Services Grid -->
+                <section class="content-section features-section">
+                    <div class="section-header">
+                        <h2 class="section-title">{{FEATURES_TITLE}}</h2>
+                        <p class="section-description">{{FEATURES_DESCRIPTION}}</p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="{{FEATURE_1_ICON}}" alt="{{FEATURE_1_TITLE}}">
+                            </div>
+                            <h3 class="feature-title">{{FEATURE_1_TITLE}}</h3>
+                            <p class="feature-description">{{FEATURE_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="{{FEATURE_2_ICON}}" alt="{{FEATURE_2_TITLE}}">
+                            </div>
+                            <h3 class="feature-title">{{FEATURE_2_TITLE}}</h3>
+                            <p class="feature-description">{{FEATURE_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="{{FEATURE_3_ICON}}" alt="{{FEATURE_3_TITLE}}">
+                            </div>
+                            <h3 class="feature-title">{{FEATURE_3_TITLE}}</h3>
+                            <p class="feature-description">{{FEATURE_3_DESCRIPTION}}</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Detailed Content Section -->
+                <section class="content-section detailed-section">
+                    <div class="section-content">
+                        <div class="content-layout">
+                            <div class="main-column">
+                                <h2 class="section-title">{{DETAILED_TITLE}}</h2>
+                                <div class="rich-text">
+                                    <p>{{DETAILED_CONTENT_P1}}</p>
+                                    <h3>{{DETAILED_SUBTITLE_1}}</h3>
+                                    <p>{{DETAILED_CONTENT_P2}}</p>
+                                    <ul class="content-list">
+                                        <li>{{LIST_ITEM_1}}</li>
+                                        <li>{{LIST_ITEM_2}}</li>
+                                        <li>{{LIST_ITEM_3}}</li>
+                                        <li>{{LIST_ITEM_4}}</li>
+                                    </ul>
+                                    <h3>{{DETAILED_SUBTITLE_2}}</h3>
+                                    <p>{{DETAILED_CONTENT_P3}}</p>
+                                </div>
+                            </div>
+                            <div class="sidebar-column">
+                                <div class="sidebar-card">
+                                    <h4 class="sidebar-title">{{SIDEBAR_TITLE}}</h4>
+                                    <p class="sidebar-text">{{SIDEBAR_TEXT}}</p>
+                                    <a href="{{SIDEBAR_CTA_LINK}}" class="sidebar-cta">{{SIDEBAR_CTA_TEXT}}</a>
+                                </div>
+                                <div class="sidebar-card">
+                                    <h4 class="sidebar-title">Quick Stats</h4>
+                                    <div class="stats-list">
+                                        <div class="stat-item">
+                                            <span class="stat-number">{{STAT_1_NUMBER}}</span>
+                                            <span class="stat-label">{{STAT_1_LABEL}}</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">{{STAT_2_NUMBER}}</span>
+                                            <span class="stat-label">{{STAT_2_LABEL}}</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-number">{{STAT_3_NUMBER}}</span>
+                                            <span class="stat-label">{{STAT_3_LABEL}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Call to Action Section -->
+                <section class="content-section cta-section">
+                    <div class="cta-background">
+                        <div class="cta-content">
+                            <h2 class="cta-title">{{CTA_TITLE}}</h2>
+                            <p class="cta-description">{{CTA_DESCRIPTION}}</p>
+                            <div class="cta-buttons">
+                                <a href="{{PRIMARY_CTA_LINK}}" class="btn btn-primary">{{PRIMARY_CTA_TEXT}}</a>
+                                <a href="{{SECONDARY_CTA_LINK}}" class="btn btn-secondary">{{SECONDARY_CTA_TEXT}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="images/mhm-logo.svg" alt="Mile High Marketing Logo" class="footer-logo-image">
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Services</h4>
+                            <ul>
+                                <li><a href="#strategic-marketing">Strategic Marketing</a></li>
+                                <li><a href="#digital-presence">Digital Presence</a></li>
+                                <li><a href="#analytics">Analytics & Insights</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="insights.html">Insights</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Connect</h4>
+                            <ul>
+                                <li><a href="#facebook">Facebook</a></li>
+                                <li><a href="#linkedin">LinkedIn</a></li>
+                                <li><a href="#twitter">Twitter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Mile High Marketing. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-nav-link">HOME</a>
+            <a href="about.html" class="mobile-nav-link">ABOUT</a>
+            <a href="insights.html" class="mobile-nav-link">INSIGHTS</a>
+            <a href="services.html" class="mobile-nav-link">SERVICES</a>
+            <a href="#contact" class="mobile-nav-link">CONTACT</a>
+        </nav>
+    </div>
+
+    <script src="js/interior-page.js"></script>
+</body>
+</html>
