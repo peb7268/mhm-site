@@ -1,0 +1,45 @@
+// Buttons
+
+@import '../variables';
+@import '../mixins';
+
+.btn {
+  @include font-button;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 187px;
+  height: 47px;
+  border-radius: $radius-md;
+  padding: 0 $spacing-lg;
+  cursor: pointer;
+  border: none;
+  @include button-hover;
+  @include focus-ring;
+
+  &--primary {
+    background: $color-primary-cyan;
+    color: $color-primary-dark;
+  }
+
+  &--secondary {
+    background: $color-neutral-white;
+    color: $color-primary-navy;
+  }
+
+  &--submit {
+    background: $color-neutral-white;
+    color: $color-primary-navy;
+    min-width: 146px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}

@@ -1,0 +1,209 @@
+// MHM Marketing Site - Mixins
+// Reusable SCSS patterns
+
+@import 'variables';
+
+// =============================================================================
+// RESPONSIVE BREAKPOINTS
+// =============================================================================
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'sm' {
+    @media (min-width: $breakpoint-sm) { @content; }
+  }
+  @else if $breakpoint == 'md' {
+    @media (min-width: $breakpoint-md) { @content; }
+  }
+  @else if $breakpoint == 'lg' {
+    @media (min-width: $breakpoint-lg) { @content; }
+  }
+  @else if $breakpoint == 'xl' {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+  @else if $breakpoint == '2xl' {
+    @media (min-width: $breakpoint-2xl) { @content; }
+  }
+}
+
+// =============================================================================
+// TYPOGRAPHY
+// =============================================================================
+
+@mixin font-hero {
+  font-family: $font-primary;
+  font-weight: $font-bold;
+  font-style: italic;
+  font-size: $text-hero;
+  line-height: $leading-none;
+  text-transform: uppercase;
+}
+
+@mixin font-h1 {
+  font-family: $font-primary;
+  font-weight: $font-semibold;
+  font-size: $text-h1;
+  line-height: $leading-tight;
+}
+
+@mixin font-h2 {
+  font-family: $font-primary;
+  font-weight: $font-bold;
+  font-size: $text-h2;
+  line-height: $leading-normal;
+}
+
+@mixin font-h3 {
+  font-family: $font-primary;
+  font-weight: $font-bold;
+  font-size: $text-h3;
+  line-height: $leading-normal;
+}
+
+@mixin font-body {
+  font-family: $font-primary;
+  font-weight: $font-regular;
+  font-size: $text-body-lg;
+  line-height: $leading-normal;
+}
+
+@mixin font-nav {
+  font-family: $font-primary;
+  font-weight: $font-medium;
+  font-size: $text-body;
+  line-height: $leading-none;
+  text-transform: uppercase;
+}
+
+@mixin font-button {
+  font-family: $font-primary;
+  font-weight: $font-medium;
+  font-size: $text-h2;
+  line-height: $leading-none;
+}
+
+// =============================================================================
+// LAYOUT
+// =============================================================================
+
+@mixin container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+@mixin section-padding {
+  padding: $section-padding-y $section-padding-x;
+
+  @include respond-to('md') {
+    padding: $section-padding-y $spacing-md;
+  }
+}
+
+// =============================================================================
+// EFFECTS
+// =============================================================================
+
+@mixin card-shadow {
+  box-shadow: $shadow-card;
+}
+
+@mixin hover-lift {
+  transition: transform $transition-base $easing-default,
+              box-shadow $transition-base $easing-default;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-hover;
+  }
+}
+
+@mixin button-hover {
+  transition: all $transition-base $easing-default;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-hover;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@mixin backdrop-blur {
+  backdrop-filter: blur(8.1px);
+  -webkit-backdrop-filter: blur(8.1px);
+}
+
+// =============================================================================
+// FOCUS STATES (Accessibility)
+// =============================================================================
+
+@mixin focus-visible {
+  &:focus-visible {
+    outline: 3px solid $color-primary-cyan;
+    outline-offset: 2px;
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    box-shadow: $shadow-focus;
+    outline: none;
+  }
+}
+
+// =============================================================================
+// TRUNCATE TEXT
+// =============================================================================
+
+@mixin truncate($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// =============================================================================
+// ASPECT RATIO
+// =============================================================================
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: ($height / $width) * 100%;
+  }
+
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// =============================================================================
+// VISUALLY HIDDEN (Accessibility)
+// =============================================================================
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Insights and articles from Mile High Marketing - Learn about web development, marketing, and business growth.">
+    <title>Blog Post - Mile High Marketing Insights</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,700&family=Albert+Sans:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <style>
+        /* Additional blog-specific styles */
+        .header--solid { background: #182c40; backdrop-filter: none; }
+
+        .article-header { max-width: 672px; margin: 120px auto 0; padding: 0 16px; }
+        .article-header__image { width: 100%; height: 383px; object-fit: cover; border-radius: 8px; box-shadow: 0px 0px 14.732px rgba(0,0,0,0.07); margin-bottom: 24px; }
+        .article-header__title { font-size: 40px; font-weight: 700; color: #182c40; line-height: 1.2; margin-bottom: 16px; }
+        .article-header__author { display: flex; gap: 12px; align-items: center; margin-bottom: 24px; }
+        .article-header__author-avatar { width: 48px; height: 48px; border-radius: 50%; }
+        .article-header__author-name { font-size: 18px; color: #182c40; }
+
+        .article-content { max-width: 672px; margin: 0 auto 60px; padding: 0 16px; }
+        .article-content p { margin-bottom: 16px; line-height: 1.5; font-size: 18px; font-weight: 300; }
+
+        .article-highlights { margin: 32px 0; }
+        .article-highlights__title { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+        .article-highlights__list { list-style: none; }
+        .article-highlights__item { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 8px; }
+        .article-highlights__icon { width: 28px; height: 28px; flex-shrink: 0; }
+        .article-highlights__text { font-size: 18px; font-weight: 700; color: #182c40; }
+
+        .comments-section { background: linear-gradient(180deg, #7DD3C0 0%, #6CC7CD 100%); padding: 60px 16px; position: relative; overflow: hidden; }
+        .comments-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('../design-assets/83442bbb6582cce07ce04dbdbf4fe97eacec4a4e.png'); background-size: cover; opacity: 0.3; z-index: 0; }
+        .comments-section__content { position: relative; z-index: 1; max-width: 672px; margin: 0 auto; }
+        .comments-section__title { font-size: 40px; font-weight: 700; color: white; margin-bottom: 24px; }
+
+        .comment-card { background: white; border-radius: 8px; padding: 16px; box-shadow: 0px 0px 14.732px rgba(0,0,0,0.07); display: flex; gap: 16px; margin-bottom: 24px; }
+        .comment-card__avatar { width: 57px; height: 57px; border-radius: 50%; flex-shrink: 0; }
+        .comment-card__content { flex: 1; }
+        .comment-card__name { font-size: 18px; font-weight: 700; color: #003048; margin-bottom: 4px; }
+        .comment-card__date { font-size: 12px; font-weight: 300; color: #003048; opacity: 0.7; margin-bottom: 8px; }
+        .comment-card__text { font-size: 18px; font-weight: 600; color: #182c40; margin-bottom: 8px; line-height: 1.5; }
+        .comment-card__reply { font-size: 12px; font-weight: 300; color: #003048; cursor: pointer; }
+
+        .comment-form { background: white; border-radius: 12px; padding: 20px; max-width: 449px; }
+        .comment-form__title { font-size: 24px; font-weight: 700; color: #182c40; margin-bottom: 16px; }
+        .comment-form__field { width: 100%; border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 12px; margin-bottom: 12px; font-family: 'Nunito', sans-serif; }
+        .comment-form__textarea { min-height: 60px; resize: vertical; }
+        .comment-form__checkbox { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 16px; font-size: 12px; }
+        .comment-form__submit { width: 193px; height: 60px; background: #b6faff; color: #182c40; border: none; border-radius: 8px; font-size: 32px; font-weight: 500; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <!-- Header - Solid Background for Blog -->
+    <header class="header header--solid">
+        <a href="index.html" class="header__logo">
+            <img src="../design-assets/45fba2bab9abb08268ddb969013786f0c31457a1.png" alt="MHM Logo">
+        </a>
+        <nav class="nav">
+            <a href="about.html" class="nav__item">About</a>
+            <a href="insights.html" class="nav__item nav__item--active">Insights</a>
+            <a href="services.html" class="nav__item">Services</a>
+        </nav>
+    </header>
+
+    <!-- Article Header -->
+    <article class="article-header">
+        <img src="../design-assets/541b6fc7a25eeb211080e7e21d21433ef7b2b6d5.png" alt="Featured image" class="article-header__image">
+        <h1 class="article-header__title">Building Better Web Experiences for Your Customers</h1>
+        <div class="article-header__author">
+            <img src="../design-assets/a0aa414672cfcc531f40b69d6eeced4343a9fbc4.png" alt="John Smith" class="article-header__author-avatar">
+            <span class="article-header__author-name">John Smith</span>
+        </div>
+    </article>
+
+    <!-- Article Content -->
+    <div class="article-content">
+        <p>In today's digital landscape, your website is often the first impression potential customers have of your business. It's not just about looking good—it's about creating an experience that converts visitors into customers.</p>
+
+        <p>We've worked with businesses across the Denver metro area and beyond, helping them transform their online presence. The key is understanding that your website isn't just a digital brochure—it's a powerful marketing tool that works for you 24/7.</p>
+
+        <p>The most successful websites we've built share some common characteristics: they load quickly, they're easy to navigate, and they clearly communicate value to visitors. But more importantly, they're built with the end user in mind.</p>
+
+        <div class="article-highlights">
+            <h3 class="article-highlights__title">Key Takeaways:</h3>
+            <ul class="article-highlights__list">
+                <li class="article-highlights__item">
+                    <img src="../design-assets/66c7453016cf191ec6b7893725b32f65af45eabd.svg" alt="Star" class="article-highlights__icon">
+                    <span class="article-highlights__text">User experience drives conversions</span>
+                </li>
+                <li class="article-highlights__item">
+                    <img src="../design-assets/66c7453016cf191ec6b7893725b32f65af45eabd.svg" alt="Star" class="article-highlights__icon">
+                    <span class="article-highlights__text">Mobile-first design is essential</span>
+                </li>
+                <li class="article-highlights__item">
+                    <img src="../design-assets/66c7453016cf191ec6b7893725b32f65af45eabd.svg" alt="Star" class="article-highlights__icon">
+                    <span class="article-highlights__text">Performance matters for SEO and users</span>
+                </li>
+            </ul>
+        </div>
+
+        <p>Whether you're looking to build a new site from scratch or renovate your existing one, the investment in a quality web presence pays dividends through increased visibility, credibility, and customer engagement.</p>
+    </div>
+
+    <!-- Blog Tags Section -->
+    <section class="section tags-section">
+        <div class="container">
+            <h3 class="tags-section__title">Read Our Posts About:</h3>
+            <div class="tags-section__list">
+                <a href="#" class="tag tag--blue">JavaScript</a>
+                <a href="#" class="tag tag--navy">Performance</a>
+                <a href="#" class="tag tag--green">Design</a>
+                <a href="#" class="tag tag--cyan">Marketing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+        <div class="comments-section__content">
+            <h2 class="comments-section__title">Comments (1)</h2>
+
+            <div class="comment-card">
+                <img src="../design-assets/2c96d0e2239d065415da2c12aab03f4665e652c2.png" alt="Roger Bator" class="comment-card__avatar">
+                <div class="comment-card__content">
+                    <div class="comment-card__name">Roger Bator</div>
+                    <div class="comment-card__date">02/22/2025</div>
+                    <div class="comment-card__text">Thanks for sharing this information! Really helpful insights on improving user experience.</div>
+                    <div class="comment-card__reply">Reply →</div>
+                </div>
+            </div>
+
+            <form class="comment-form">
+                <h3 class="comment-form__title">Write a comment</h3>
+                <textarea class="comment-form__field comment-form__textarea" placeholder="Your message" required></textarea>
+                <input type="text" class="comment-form__field" placeholder="Name" required>
+                <input type="email" class="comment-form__field" placeholder="Email" required>
+                <label class="comment-form__checkbox">
+                    <input type="checkbox">
+                    <span>I want to receive news about new posts</span>
+                </label>
+                <button type="submit" class="comment-form__submit">Post</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__logo">
+            <img src="../design-assets/45fba2bab9abb08268ddb969013786f0c31457a1.png" alt="MHM Logo">
+        </div>
+        <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Facebook">
+                <img src="../design-assets/b0f11324ebd561541291abd404ceba2a94fda6b4.svg" alt="Facebook">
+            </a>
+            <a href="mailto:info@milehighmarketing.com" class="footer__social-link" aria-label="Email">
+                <img src="../design-assets/e8b477c5e74c726e9030ec6e3d3f6b26eb70804c.svg" alt="Email">
+            </a>
+            <a href="tel:+14703583559" class="footer__social-link" aria-label="Phone">
+                <img src="../design-assets/128d9b538711f5e9d14845b0780a44a609351a89.svg" alt="Phone">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

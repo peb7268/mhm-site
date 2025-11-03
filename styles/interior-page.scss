@@ -1,10 +1,5 @@
 // Interior Page Styles
-// Use the same variables from main.scss
-$primary-teal: #4dd0e1;
-$secondary-teal: #26a69a;
-$dark-teal: #00796b;
-$dark-text: #333;
-$white: #fff;
+// Variables imported from main.scss - no need to redefine
 
 // Interior Page Layout
 .interior-page {
@@ -66,13 +61,13 @@ $white: #fff;
       position: relative;
 
       &:hover {
-        color: $secondary-teal;
+        color: $water-medium;
       }
 
       &.active {
-        color: $secondary-teal;
+        color: $water-medium;
         position: relative;
-        
+
         &:after {
           content: '';
           position: absolute;
@@ -80,12 +75,12 @@ $white: #fff;
           left: 0;
           right: 0;
           height: 2px;
-          background: $secondary-teal;
+          background: $water-medium;
         }
       }
 
       &.cta-link {
-        background: linear-gradient(135deg, $dark-teal, $secondary-teal);
+        background: linear-gradient(135deg, $grass-medium, $grass-light);
         color: white;
         padding: 10px 20px;
         border-radius: 25px;
@@ -137,7 +132,7 @@ $white: #fff;
 
 // Page Hero Section
 .page-hero {
-  background: linear-gradient(135deg, $primary-teal 0%, $secondary-teal 50%, $dark-teal 100%);
+  background: linear-gradient(135deg, $water-light 0%, $water-medium 50%, $forest-dark 100%);
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
@@ -333,7 +328,7 @@ $white: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(135deg, $primary-teal, $secondary-teal);
+        background: linear-gradient(135deg, $water-medium, $water-light);
         border-radius: 16px;
 
         img {
@@ -414,7 +409,7 @@ $white: #fff;
               content: '✓';
               position: absolute;
               left: 0;
-              color: $secondary-teal;
+              color: $grass-medium;
               font-weight: bold;
             }
           }
@@ -450,7 +445,7 @@ $white: #fff;
 
         .sidebar-cta {
           display: inline-block;
-          background: linear-gradient(135deg, $dark-teal, $secondary-teal);
+          background: linear-gradient(135deg, $grass-medium, $grass-light);
           color: white;
           padding: 12px 24px;
           border-radius: 25px;
@@ -461,7 +456,7 @@ $white: #fff;
 
           &:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(38, 166, 154, 0.3);
+            box-shadow: 0 5px 15px rgba(107, 155, 74, 0.3);
           }
         }
 
@@ -480,7 +475,7 @@ $white: #fff;
             .stat-number {
               font-size: 28px;
               font-weight: 700;
-              color: $dark-teal;
+              color: $grass-medium;
             }
 
             .stat-label {
@@ -503,7 +498,7 @@ $white: #fff;
   padding: 0;
 
   .cta-background {
-    background: linear-gradient(135deg, $dark-teal, $secondary-teal);
+    background: linear-gradient(135deg, $forest-dark, $grass-medium);
     border-radius: 20px;
     padding: 60px 40px;
     text-align: center;
@@ -559,7 +554,7 @@ $white: #fff;
 
   &.btn-primary {
     background: white;
-    color: $dark-teal;
+    color: $forest-dark;
 
     &:hover {
       transform: translateY(-2px);
@@ -574,7 +569,7 @@ $white: #fff;
 
     &:hover {
       background: white;
-      color: $dark-teal;
+      color: $forest-dark;
       transform: translateY(-2px);
     }
   }
@@ -613,7 +608,7 @@ $white: #fff;
       transition: color 0.3s ease;
 
       &:hover {
-        color: $primary-teal;
+        color: $sky-light;
       }
     }
   }
@@ -673,8 +668,8 @@ $white: #fff;
 
         &:focus {
           outline: none;
-          border-color: $secondary-teal;
-          box-shadow: 0 0 0 3px rgba(38, 166, 154, 0.1);
+          border-color: $water-medium;
+          box-shadow: 0 0 0 3px rgba(90, 155, 197, 0.1);
         }
 
         &::placeholder {
@@ -690,7 +685,7 @@ $white: #fff;
 
       .submit-button {
         width: 100%;
-        background: linear-gradient(135deg, $dark-teal, $secondary-teal);
+        background: linear-gradient(135deg, $grass-medium, $grass-light);
         color: white;
         border: none;
         padding: 18px 32px;
@@ -703,7 +698,7 @@ $white: #fff;
 
         &:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(38, 166, 154, 0.3);
+          box-shadow: 0 8px 25px rgba(107, 155, 74, 0.3);
         }
 
         &:disabled {

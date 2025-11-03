@@ -7,7 +7,7 @@
     "dev": "concurrently \"npm run webpack:watch\" \"npm run serve\"",
     "build": "webpack --mode production",
     "webpack:watch": "webpack --mode development --watch",
-    "serve": "browser-sync start --server dist --files 'dist/**/*' --port 3001 --ui-port 3002",
+    "serve": "browser-sync start --server dist --files 'dist/**/*' --port 3070 --ui-port 3071",
     "clean": "rm -rf dist"
   },
   "keywords": [
@@ -26,7 +26,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
     "mini-css-extract-plugin": "^2.7.6",
-    "sass": "^1.69.0",
+    "sass": "^1.93.3",
     "sass-loader": "^13.3.2",
     "webpack": "^5.88.0",
     "webpack-cli": "^5.1.4"

@@ -1,9 +1,10 @@
 // Import SCSS
 import '../styles/main.scss';
 
-// Import the mountain landscape image and logo
-import mountainLandscape from '../images/c6f28b9ee2132fab7176486f6cb3deefa25586ad.png';
+// Import the mountain landscape image, logo, and Denver skyline
+import mountainLandscape from '../images/logo-1.png';
 import mhmLogo from '../images/mhm-logo.svg';
+import denverSkyline from '../images/denver-skyline-option-3.jpg';
 
 // Main JavaScript functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -12,10 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (landscapeImage) {
         landscapeImage.src = mountainLandscape;
     }
-    
+
     const logoImage = document.querySelector('.logo-image');
     if (logoImage) {
         logoImage.src = mhmLogo;
+    }
+
+    const skylineImage = document.querySelector('.skyline-image');
+    if (skylineImage) {
+        skylineImage.src = denverSkyline;
     }
     // Navigation buttons
     const navButtons = document.querySelectorAll('.nav-button');

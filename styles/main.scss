@@ -1,11 +1,34 @@
-// Variables - Extracted from Figma design
-$primary-teal: #4dd0e1;
-$secondary-teal: #26a69a;
-$dark-teal: #00796b;
-$dark-text: #333;
-$white: #fff;
-$figma-teal-start: #4dd0e1;
-$figma-teal-end: #00796b;
+// Variables - Extracted from logo-1.png illustration
+// Sky Blues (Primary Brand Colors)
+$sky-navy: #204593;           // Deep navy sky - headers, primary text
+$sky-medium: #5B8EC7;         // Medium blue sky - accents
+$sky-light: #B0E0E6;          // Glacier blue - text highlights
+$sky-pale: #E6F7FB;           // Very light sky - backgrounds
+
+// Water Blues (Interactive Elements)
+$water-dark: #2C5F7F;         // Dark water - borders, shadows
+$water-medium: #5A9BC5;       // Medium water - buttons
+$water-light: #8AC5E0;        // Light water - hover states
+
+// Nature Greens (Success & CTAs)
+$forest-dark: #234D2A;        // Dark forest - footer, dark sections
+$grass-medium: #6B9B4A;       // Medium grass - CTAs, success
+$grass-light: #9BC865;        // Light grass - highlights
+$grass-bright: #C1D87A;       // Yellow-green - bright accents
+
+// Mountain Grays (Neutrals & Structure)
+$mountain-dark: #525D75;      // Dark gray-purple - body text
+$mountain-medium: #8095AD;    // Medium gray-blue - secondary text
+$mountain-light: #B5C4D8;     // Light gray-blue - borders
+$mountain-pale: #DCE4EF;      // Very pale gray-blue - card backgrounds
+
+// City Neutrals (Buildings & UI)
+$white: #FFFFFF;              // Pure white - cards, buttons
+$neutral-building: #95A0B3;   // Gray buildings - secondary UI
+$neutral-light: #C5CFE0;      // Light building highlights
+
+// Legacy compatibility (to be phased out)
+$dark-text: $mountain-dark;
 
 // Reset
 * {
@@ -21,33 +44,49 @@ body {
 
 .hero-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, $primary-teal 0%, $secondary-teal 50%, $dark-teal 100%);
+  background: $sky-navy;
   position: relative;
   overflow: hidden;
 }
 
+// Hero Inner Container - Provides consistent padding for hero elements
+.hero-inner-container {
+  position: absolute;
+  inset: 0;
+  padding: 0 80px;
+  z-index: 10;
+  pointer-events: none; // Allow clicks to pass through container
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+}
+
 // Header Navigation
 .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
+  position: fixed;
+  width: 100%;
+  background: rgb(255 255 255 / 80%);
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid #2e539e;
+  z-index: 100;
+  max-height: 150px; // Enforce max height
 
   @media (max-width: 768px) {
-    padding: 15px 20px;
+    padding: 6px 20px;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
   }
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 48px; // Reduced from 60px
+  height: 48px; // Reduced from 60px
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,50 +111,62 @@ body {
 .nav-button {
   background: rgba(255, 255, 255, 0.9);
   border: none;
-  padding: 12px 24px;
-  border-radius: 25px;
+  padding: 8px 20px; // Reduced from 12px 24px
+  border-radius: 20px; // Reduced from 25px
   font-weight: 600;
+  font-size: 14px; // Explicit smaller font size
   color: $dark-text;
   cursor: pointer;
   transition: all 0.3s ease;
 
-  &:hover {
-    background: $white;
+  &:hover,
+  &:active {
+    background: $sky-navy;
+    color: $white;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
 
   @media (max-width: 768px) {
-    padding: 8px 16px;
-    font-size: 14px;
+    padding: 6px 14px;
+    font-size: 13px;
   }
 }
 
 // Hero Content
 .hero-content {
   position: absolute;
-  top: 50%;
-  left: 50px;
-  transform: translateY(-50%);
+  top: 25%; // Positioned 25% from the top
+  left: 0;
   z-index: 50;
   max-width: 600px;
+  pointer-events: auto; // Enable interactions
 
   @media (max-width: 768px) {
-    left: 20px;
-    right: 20px;
     max-width: none;
+    right: 0;
   }
 }
 
 .hero-headline {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
-  color: $dark-text;
+  color: #ffffff; // White base
   line-height: 1.1;
   margin-bottom: 40px;
+  text-shadow:
+    3px 3px 12px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(176, 224, 230, 0.3); // Subtle glacial blue glow
 
   .highlight {
-    color: #1a1a1a;
+    color: #ffffff; // White
+  }
+
+  .glacier-blue {
+    color: $sky-light; // Glacier blue for "YOU COULD CHOOSE YOUR CUSTOMERS"
+    text-shadow:
+      3px 3px 12px rgba(0, 0, 0, 0.8),
+      0 0 40px rgba(176, 224, 230, 0.7); // Strong glacial glow
   }
 
   @media (max-width: 768px) {
@@ -126,17 +177,18 @@ body {
 // Landscape Background - Using Figma image
 .landscape-background {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
-  height: 75vh;
+  height: 100vh;
   z-index: 1;
-  
+  border-bottom: 2px solid #173120;
+
   .landscape-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center bottom;
+    object-position: center top;
   }
 }
 
@@ -144,14 +196,14 @@ body {
 .action-section {
   position: absolute;
   bottom: 40px;
-  left: 50px;
+  left: 0;
   display: flex;
   align-items: center;
   gap: 30px;
   z-index: 60;
+  pointer-events: auto; // Enable interactions
 
   @media (max-width: 768px) {
-    left: 20px;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
@@ -219,27 +271,28 @@ body {
 .cta-button {
   position: absolute;
   bottom: 40px;
-  right: 50px;
-  background: #1a237e;
+  right: 0;
+  background: linear-gradient(135deg, #1B4B7F 0%, #2E5F8F 100%); // Deep navy → medium navy
   color: $white;
-  border: none;
-  padding: 15px 30px;
+  border: 1px solid rgb(155 212 231 / 35%);
+  padding: 16px 32px;
   border-radius: 25px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 60;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  pointer-events: auto; // Enable interactions
 
   &:hover {
-    background: #303f9f;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(26, 35, 126, 0.3);
+    background: linear-gradient(135deg, #2E5F8F 0%, #4A7BA7 100%); // Lighter navies
+    transform: translateY(-3px) scale(1.02);
   }
 
   @media (max-width: 768px) {
-    right: 20px;
-    padding: 12px 24px;
+    padding: 14px 28px;
     font-size: 16px;
   }
 }
@@ -318,7 +371,7 @@ body {
 // Services Section
 .services-section {
   padding: 100px 0;
-  background: #f8fafc;
+  background: $sky-pale;
 
   .services-grid {
     display: grid;
@@ -408,7 +461,7 @@ body {
         display: block;
         font-size: 36px;
         font-weight: 700;
-        color: $dark-teal;
+        color: $grass-medium;
       }
 
       .stat-label {
@@ -424,7 +477,7 @@ body {
     .placeholder-image {
       width: 100%;
       height: 300px;
-      background: linear-gradient(135deg, $primary-teal 0%, $secondary-teal 100%);
+      background: linear-gradient(135deg, $water-medium 0%, $sky-medium 100%);
       border-radius: 20px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
       display: flex;
@@ -459,7 +512,7 @@ body {
 // Contact Section
 .contact-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, $dark-teal, $secondary-teal);
+  background: linear-gradient(135deg, $forest-dark, $grass-medium);
 
   .contact-content {
     display: grid;
@@ -535,7 +588,7 @@ body {
 
         &:focus {
           outline: none;
-          border-color: $secondary-teal;
+          border-color: $water-medium;
         }
 
         &::placeholder {
@@ -544,7 +597,7 @@ body {
       }
 
       .submit-button {
-        background: linear-gradient(135deg, $dark-teal, $secondary-teal);
+        background: #45713a;
         color: white;
         border: none;
         padding: 16px 32px;
@@ -556,7 +609,7 @@ body {
 
         &:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(38, 166, 154, 0.3);
+          box-shadow: 0 8px 25px rgba(107, 155, 74, 0.3);
         }
       }
     }
@@ -608,7 +661,7 @@ body {
       font-size: 18px;
       font-weight: 600;
       margin-bottom: 20px;
-      color: $primary-teal;
+      color: $sky-light;
     }
 
     ul {
@@ -624,7 +677,7 @@ body {
           transition: color 0.3s ease;
 
           &:hover {
-            color: $primary-teal;
+            color: $sky-light;
           }
         }
       }

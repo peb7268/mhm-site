@@ -1,0 +1,80 @@
+// Header & Navigation
+
+@import '../variables';
+@import '../mixins';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 105px;
+  @include backdrop-blur;
+  background: $overlay-header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px;
+  z-index: $z-header;
+
+  &--solid {
+    background: $color-primary-navy;
+    backdrop-filter: none;
+  }
+}
+
+.header__logo {
+  width: 74px;
+  height: 74px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.nav__item {
+  @include font-nav;
+  color: $color-primary-dark;
+  background: $color-primary-cyan;
+  border-radius: $radius-sm;
+  padding: 8px 16px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 113px;
+  transition: all $transition-fast $easing-default;
+  @include focus-visible;
+
+  &:hover {
+    background: darken($color-primary-cyan, 5%);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &--active {
+    background: $color-primary-green;
+  }
+}
+
+// Responsive
+@include respond-to('md') {
+  .header {
+    padding: 0 $spacing-md;
+  }
+
+  .nav {
+    gap: $spacing-sm;
+  }
+}
