@@ -3,7 +3,7 @@ import '../styles/main.scss';
 
 // Import the mountain landscape image, logo, and Denver skyline
 import mountainLandscape from '../images/logo-1.png';
-import mhmLogo from '../images/mhm-logo.svg';
+import mhmLogo from '../images/mhm-logo.png';
 import denverSkyline from '../images/denver-skyline-option-3.jpg';
 
 // Main JavaScript functionality

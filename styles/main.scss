@@ -1,3 +1,6 @@
+// Google Fonts - Logo Typography
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;600;700&family=Inter:wght@300;500&family=Montserrat:wght@200;700&family=Work+Sans:wght@300;400&display=swap');
+
 // Variables - Extracted from logo-1.png illustration
 // Sky Blues (Primary Brand Colors)
 $sky-navy: #204593;           // Deep navy sky - headers, primary text
@@ -51,14 +54,17 @@ body {
 
 // Hero Inner Container - Provides consistent padding for hero elements
 .hero-inner-container {
-  position: absolute;
-  inset: 0;
-  padding: 0 80px;
+  width: 90%;
+  margin: 15% auto 0;
+  position: relative;
+  min-height: 70vh;
   z-index: 10;
   pointer-events: none; // Allow clicks to pass through container
 
   @media (max-width: 768px) {
-    padding: 0 20px;
+    width: 95%;
+    margin: 20% auto 0;
+    min-height: 60vh;
   }
 }
 
@@ -85,17 +91,109 @@ body {
 }
 
 .logo {
-  width: 48px; // Reduced from 60px
-  height: 48px; // Reduced from 60px
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 12px;
   position: relative;
 
   .logo-image {
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: 60px;
     object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+
+    .logo-primary,
+    .logo-secondary {
+      transition: color 0.3s ease;
+    }
+  }
+}
+
+// Logo Typography Variations
+
+// Variation 1: Clean Corporate (Default)
+.logo-style-1 {
+  .logo-primary {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: $sky-navy;
+    letter-spacing: 0.5px;
+  }
+
+  .logo-secondary {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: $water-medium;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+// Variation 2: Modern Tech
+.logo-style-2 {
+  .logo-primary {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: $mountain-dark;
+    letter-spacing: 0.3px;
+  }
+
+  .logo-secondary {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: $grass-medium;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+}
+
+// Variation 3: Bold Impact
+.logo-style-3 {
+  .logo-primary {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    color: $sky-medium;
+    letter-spacing: 0.2px;
+  }
+
+  .logo-secondary {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: $sky-medium;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+}
+
+// Variation 4: Minimalist Elegant
+.logo-style-4 {
+  .logo-primary {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: $sky-navy;
+    letter-spacing: 0.4px;
+  }
+
+  .logo-secondary {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: $sky-light;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
   }
 }
 
@@ -135,16 +233,18 @@ body {
 
 // Hero Content
 .hero-content {
-  position: absolute;
-  top: 25%; // Positioned 25% from the top
+  position: relative;
   left: 0;
   z-index: 50;
-  max-width: 600px;
+  width: 50%;
+  max-width: 700px;
   pointer-events: auto; // Enable interactions
+  min-height: 300px;
 
   @media (max-width: 768px) {
+    width: 100%;
     max-width: none;
-    right: 0;
+    min-height: 200px;
   }
 }
 
