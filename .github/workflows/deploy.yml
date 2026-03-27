@@ -1,0 +1,64 @@
+name: Build & Deploy MHM Site
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Verify build
+        run: |
+          if [ ! -f dist/index.html ]; then
+            echo "Build failed — no index.html in dist/"
+            exit 1
+          fi
+          echo "Build verified: $(find dist -name '*.html' | wc -l) HTML files"
+
+      - name: Deploy to NAS via SCP
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.NAS_HOST }}
+          username: ${{ secrets.NAS_USER }}
+          key: ${{ secrets.NAS_SSH_KEY }}
+          port: ${{ secrets.NAS_SSH_PORT }}
+          source: "dist/*"
+          target: /mnt/user/appdata/mhm-site
+          strip_components: 1
+
+      - name: Restart nginx container
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.NAS_HOST }}
+          username: ${{ secrets.NAS_USER }}
+          key: ${{ secrets.NAS_SSH_KEY }}
+          port: ${{ secrets.NAS_SSH_PORT }}
+          script: |
+            if docker ps -q -f name=mhm-site | grep -q .; then
+              docker restart mhm-site
+              echo "Restarted mhm-site container"
+            else
+              echo "mhm-site container not running — will need manual start"
+            fi

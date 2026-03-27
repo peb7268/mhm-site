@@ -1,0 +1,445 @@
+// Import main design system
+@import './main.scss';
+
+// Service Detail Page Specific Styles
+
+// Service Detail Hero Section
+.service-hero,
+.hero {
+  min-height: 55vh;
+  background: $sky-navy;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px; // Account for fixed header
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    opacity: 0.7;
+    border-bottom: 2px solid $forest-dark;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $white;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 768px) {
+      font-size: 48px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    color: $white;
+    font-weight: 300;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+}
+
+// Service Content Sections
+.service-content {
+  background: $white;
+  padding: 80px 0;
+
+  &:nth-of-type(even) {
+    background: $mountain-pale;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: $sky-navy;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid $grass-medium;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: $mountain-dark;
+    margin: 0 auto 25px;
+    max-width: 900px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: $sky-navy;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+
+    li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 15px;
+      font-size: 18px;
+      line-height: 1.6;
+      color: $mountain-dark;
+
+      &:before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: $grass-medium;
+        font-weight: 700;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+// Content Section (matches services.scss)
+.content-section {
+  background: $white;
+  padding: 100px 0;
+
+  &:nth-of-type(even) {
+    background: $mountain-pale;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: $sky-navy;
+    margin-bottom: 30px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: $mountain-dark;
+    margin: 0 auto 25px;
+    max-width: 900px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: $sky-navy;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+}
+
+// Content Images
+.content-image {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  display: block;
+
+  &--full-width {
+    max-width: 100%;
+    margin: 40px 0;
+  }
+}
+
+// All Services Grid Section
+.all-services {
+  background: $sky-pale;
+  padding: 80px 0;
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: $sky-navy;
+    text-align: center;
+    margin-bottom: 50px;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
+  }
+}
+
+// Services Grid (matches services.scss styling)
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 0;
+}
+
+.service-card {
+  background: $white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: $mountain-dark;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: $sky-medium;
+  }
+
+  &--highlighted {
+    background: linear-gradient(135deg, $sky-navy 0%, $sky-medium 100%);
+    color: $white;
+    border-color: #75e1b3;
+
+    .service-card__text {
+      color: $white;
+    }
+
+    &:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 15px 40px rgba(32, 69, 147, 0.3);
+    }
+  }
+
+  &__icon {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: 600;
+    color: $sky-navy;
+  }
+}
+
+// Call to Action Section
+.service-cta {
+  background: linear-gradient(135deg, $sky-navy 0%, $water-dark 100%);
+  padding: 100px 0;
+  text-align: center;
+  color: $white;
+
+  &__title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+
+  &__button {
+    background: $grass-medium;
+    color: $white;
+    padding: 18px 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background: $forest-dark;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(107, 155, 74, 0.3);
+    }
+  }
+}
+
+// Contact Section
+.contact-section {
+  position: relative;
+  padding: 100px 0;
+  background: linear-gradient(135deg, $forest-dark, $grass-medium);
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    z-index: 0;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 50px 40px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    padding: 40px 30px;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: $sky-navy;
+    margin-bottom: 30px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid $mountain-light;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $sky-medium;
+      box-shadow: 0 0 0 3px rgba(91, 142, 199, 0.1);
+    }
+
+    &::placeholder {
+      color: $mountain-medium;
+    }
+  }
+
+  &__textarea {
+    grid-column: 1 / -1;
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  &__submit {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+.btn {
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+
+  &--submit {
+    background: $grass-medium;
+    color: white;
+
+    &:hover {
+      background: $forest-dark;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(107, 155, 74, 0.3);
+    }
+  }
+}
+
+// Section wrapper
+.section {
+  padding: 100px 0;
+}
+
+// Container
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 95%;
+  }
+}
