@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E6F7FB"/>
+      <stop offset="1" stop-color="#B0E0E6"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#sky)"/>
+  <!-- distant mountain silhouette -->
+  <path d="M0 280 L80 220 L160 260 L240 200 L340 250 L440 210 L540 240 L600 220 L600 400 L0 400 Z"
+        fill="#B5C4D8" opacity="0.45"/>
+  <path d="M0 320 L100 270 L180 290 L280 250 L380 290 L480 260 L600 280 L600 400 L0 400 Z"
+        fill="#8AC5E0" opacity="0.5"/>
+
+    <!-- color palette swatches -->
+    <rect x="80" y="120" width="80" height="160" rx="10" fill="#204593"/>
+    <rect x="170" y="120" width="80" height="160" rx="10" fill="#5A9BC5"/>
+    <rect x="260" y="120" width="80" height="160" rx="10" fill="#6B9B4A"/>
+    <rect x="350" y="120" width="80" height="160" rx="10" fill="#FFA033"/>
+    <rect x="440" y="120" width="80" height="160" rx="10" fill="#FF8A7A"/>
+    <!-- swatch labels -->
+    <rect x="92" y="252" width="56" height="20" rx="4" fill="#FFFFFF" opacity="0.9"/>
+    <rect x="182" y="252" width="56" height="20" rx="4" fill="#FFFFFF" opacity="0.9"/>
+    <rect x="272" y="252" width="56" height="20" rx="4" fill="#FFFFFF" opacity="0.9"/>
+    <rect x="362" y="252" width="56" height="20" rx="4" fill="#FFFFFF" opacity="0.9"/>
+    <rect x="452" y="252" width="56" height="20" rx="4" fill="#FFFFFF" opacity="0.9"/>
+    <!-- circle mark / logo -->
+    <circle cx="300" cy="80" r="40" fill="#FFFFFF" stroke="#204593" stroke-width="3"/>
+    <text x="300" y="92" font-family="Georgia,serif" font-size="36" font-weight="700"
+          fill="#204593" text-anchor="middle">M</text>
+    <!-- typography sample -->
+    <rect x="130" y="310" width="340" height="40" rx="6" fill="#FFFFFF"/>
+    <rect x="150" y="320" width="120" height="8" rx="2" fill="#204593"/>
+    <rect x="150" y="334" width="200" height="5" rx="2" fill="#8095AD"/>
+    </svg>

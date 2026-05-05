@@ -127,6 +127,7 @@ module.exports = (env, argv) => {
         patterns: [
           { from: 'design-assets/*.svg', to: '[path][name][ext]' },
           { from: 'design-assets/*.png', to: '[path][name][ext]' },
+          { from: 'images/illustrations/*.svg', to: '[path][name][ext]' },
           { from: 'static/robots.txt', to: 'robots.txt' },
           { from: 'static/sitemap.xml', to: 'sitemap.xml' },
           { from: 'images/mhm-logo.png', to: 'favicon.png' },
