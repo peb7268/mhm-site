@@ -97,7 +97,7 @@
   &--highlighted {
     background: linear-gradient(135deg, $sky-navy 0%, $sky-medium 100%);
     color: $white;
-    border-color: #75e1b3;
+    border-color: $water-medium;
 
     .service-card__text {
       color: $white;
@@ -208,11 +208,11 @@
   }
 
   &--green {
-    background: $grass-medium;
+    background: $water-medium;
     color: $white;
 
     &:hover {
-      background: $forest-dark;
+      background: $water-dark;
       transform: translateY(-2px);
     }
   }
@@ -231,7 +231,10 @@
 // Contact Section
 .contact-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, $forest-dark, $grass-medium);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(176, 224, 230, 0.45) 0%, transparent 50%),
+    radial-gradient(circle at 15% 80%, rgba(155, 200, 101, 0.18) 0%, transparent 55%),
+    $sky-pale;
 
   &__content {
     width: 100%;
@@ -317,7 +320,7 @@
   border: none;
 
   &--submit {
-    background: #45713a;
+    background: $water-medium;
     color: white;
 
     &:hover {

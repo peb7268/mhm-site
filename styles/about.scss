@@ -161,31 +161,22 @@
     }
   }
 
-  &--green {
-    background: $grass-medium;
-    color: $white;
-
-    &:hover {
-      background: $forest-dark;
-      transform: translateY(-2px);
-    }
-  }
-
+  &--green,
   &--cyan {
-    background: $water-medium;
-    color: $white;
-
-    &:hover {
-      background: $water-dark;
-      transform: translateY(-2px);
-    }
+    // Phased out — both legacy variants now route through the unified
+    // primary so the design system stays consistent.
+    @extend %btn-primary;
   }
 }
 
-// Contact Section
+// Contact Section — same treatment as the homepage P0 fix:
+// soft sky-pale w/ subtle hero-palette radial overlays, no forest-green slab.
 .contact-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, $forest-dark, $grass-medium);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(176, 224, 230, 0.45) 0%, transparent 50%),
+    radial-gradient(circle at 15% 80%, rgba(155, 200, 101, 0.18) 0%, transparent 55%),
+    $sky-pale;
 
   &__content {
     width: 100%;
@@ -261,25 +252,12 @@
   }
 }
 
-.btn {
-  padding: 16px 32px;
-  border-radius: 10px;
+// .btn--submit also routes through the unified primary so the form button
+// matches every other CTA on the site.
+.btn--submit {
+  @extend %btn-primary;
   font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-
-  &--submit {
-    background: $grass-medium;
-    color: white;
-
-    &:hover {
-      background: $forest-dark;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(107, 155, 74, 0.3);
-    }
-  }
+  padding: 16px 32px;
 }
 
 // Section wrapper
