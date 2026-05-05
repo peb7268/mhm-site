@@ -424,21 +424,22 @@ body {
   gap: 10px;
 }
 
+// Quietened so they no longer compete with the primary CTA.
+// Smaller, transparent-on-illustration with subtle border.
 .review-btn {
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  padding: 12px 24px;
-  min-height: 44px;
-  border-radius: 20px;
-  font-weight: 600;
-  color: $dark-text;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 8px 16px;
+  min-height: 36px;
+  border-radius: 999px;
+  font-weight: 500;
+  color: $sky-navy;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 14px;
+  transition: background 0.2s ease;
+  font-size: 13px;
 
   &:hover {
     background: $white;
-    transform: translateY(-2px);
   }
 }
 
@@ -470,37 +471,24 @@ body {
   }
 }
 
+// Hero "Read More" — uses unified primary button.
+// Position is absolute over the illustration; visual treatment matches
+// every other primary CTA on the site so the eye doesn't have to retrain.
 .cta-button {
+  @extend %btn-primary;
   position: absolute;
   bottom: 40px;
   right: 0;
-  background: linear-gradient(135deg, #1B4B7F 0%, #2E5F8F 100%); // Deep navy → medium navy
-  color: $white;
-  border: 1px solid rgb(155 212 231 / 35%);
-  padding: 16px 32px;
-  border-radius: 25px;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.3s ease;
   z-index: 60;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  pointer-events: auto; // Enable interactions
-
-  &:hover {
-    background: linear-gradient(135deg, #2E5F8F 0%, #4A7BA7 100%); // Lighter navies
-    transform: translateY(-3px) scale(1.02);
-  }
+  pointer-events: auto;
 
   @media (max-width: 768px) {
     position: relative;
     bottom: auto;
     right: auto;
-    padding: 14px 28px;
-    font-size: 16px;
     width: 100%;
-    text-align: center;
     margin-top: 16px;
   }
 }
@@ -862,45 +850,78 @@ body {
 }
 
 // Button Styles
-.btn {
+// Canonical button system — P1 unification.
+// All site CTAs inherit from .btn-primary; .btn--primary kept as alias for
+// pre-existing markup. Color comes from $water-medium (the palette token
+// commented as "buttons") which matches the hero illustration.
+%btn-base {
   display: inline-block;
-  padding: 16px 40px;
-  border-radius: 10px;
-  font-size: 18px;
+  padding: 14px 32px;
+  border-radius: 999px;            // pill — single shape language across site
+  font-size: 16px;
   font-weight: 600;
+  letter-spacing: 0.3px;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
   border: none;
   text-align: center;
+  line-height: 1.2;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
 
+%btn-primary {
+  @extend %btn-base;
+  background: $water-medium;
+  color: $white;
+
+  &:hover {
+    background: $water-dark;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(44, 95, 127, 0.25);
+  }
+}
+
+%btn-ghost {
+  @extend %btn-base;
+  background: transparent;
+  color: $sky-navy;
+  border: 1.5px solid rgba(32, 69, 147, 0.25);
+
+  &:hover {
+    background: rgba(32, 69, 147, 0.06);
+    border-color: $sky-navy;
+  }
+}
+
+.btn-primary { @extend %btn-primary; }
+.btn-ghost   { @extend %btn-ghost; }
+
+.btn {
+  @extend %btn-base;
+
+  // Legacy primary class — keep for existing markup that says btn--primary.
   &--primary {
-    background: $sky-navy;
-    color: $white;
-
-    &:hover {
-      background: $sky-medium;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(32, 69, 147, 0.3);
-    }
+    @extend %btn-primary;
   }
 
+  // Secondary used to be green; now a quiet ghost so it stops clashing.
   &--secondary {
-    background: $grass-medium;
-    color: $white;
-
-    &:hover {
-      background: $forest-dark;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(107, 155, 74, 0.3);
-    }
+    @extend %btn-ghost;
   }
 }
 
 // Contact Section
+// P0 — replaces the forest-green slab. Uses the same sky/water tokens as
+// the hero illustration so the contact section feels like part of the
+// same site instead of a different one. Headings and body text are now
+// dark on a soft sky-pale background; the form card sits on top with a
+// subtle elevation.
 .contact-section {
   padding: 100px 0;
-  background: linear-gradient(135deg, $forest-dark, $grass-medium);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(176, 224, 230, 0.45) 0%, transparent 50%),
+    radial-gradient(circle at 15% 80%, rgba(155, 200, 101, 0.18) 0%, transparent 55%),
+    $sky-pale;
 
   @media (max-width: 768px) {
     padding: 60px 0;
@@ -920,7 +941,7 @@ body {
 
   .contact-info {
     .section-title {
-      color: white;
+      color: $sky-navy;
       text-align: left;
       margin-bottom: 20px;
     }
@@ -928,7 +949,7 @@ body {
     .contact-description {
       font-size: 18px;
       line-height: 1.7;
-      color: rgba(255, 255, 255, 0.9);
+      color: $mountain-dark;
       margin-bottom: 40px;
     }
   }
@@ -945,7 +966,7 @@ body {
       }
 
       .contact-text {
-        color: white;
+        color: $sky-navy;
         font-size: 16px;
         font-weight: 500;
       }
@@ -953,10 +974,10 @@ body {
   }
 
   .contact-form {
-    background: white;
+    background: $white;
     padding: 40px;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 32px rgba(32, 69, 147, 0.10);
 
     @media (max-width: 768px) {
       padding: 28px 20px;
@@ -965,7 +986,7 @@ body {
     h3 {
       font-size: 24px;
       font-weight: 600;
-      color: #1f2937;
+      color: $sky-navy;
       margin-bottom: 30px;
       text-align: center;
     }
@@ -977,10 +998,11 @@ body {
 
       input, textarea {
         padding: 15px;
-        border: 2px solid #e5e7eb;
+        border: 1.5px solid $mountain-light;
         border-radius: 10px;
         font-size: 16px;
-        transition: border-color 0.3s ease;
+        font-family: inherit;
+        transition: border-color 0.2s ease;
 
         &:focus {
           outline: none;
@@ -988,25 +1010,14 @@ body {
         }
 
         &::placeholder {
-          color: #9ca3af;
+          color: $mountain-medium;
         }
       }
 
       .submit-button {
-        background: #45713a;
-        color: white;
-        border: none;
-        padding: 16px 32px;
+        @extend %btn-primary;
         font-size: 18px;
-        font-weight: 600;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(107, 155, 74, 0.3);
-        }
+        padding: 16px 32px;
       }
     }
   }
