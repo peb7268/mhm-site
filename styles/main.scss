@@ -158,11 +158,20 @@ p  { @extend %body; }
   background: $sky-navy;
   position: relative;
   overflow: hidden;
+  // Full-bleed: the hero lives inside .page-wrapper (95%/1800px), but the background
+  // image must span the entire viewport edge-to-edge. Break out to 100vw.
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
 }
 
 // Hero Inner Container - Provides consistent padding for hero elements
 .hero-inner-container {
-  width: 100%;
+  // Constrain the hero content (headline + buttons) to the same content column as
+  // the sections below, so its edges line up — while the background stays full-bleed.
+  width: 95%;
+  max-width: 1800px;
+  padding: 0 20px;
   margin: 15% auto 0;
   position: relative;
   min-height: 70vh;
@@ -185,9 +194,9 @@ p  { @extend %body; }
   top: 0;
   width: 100%;
   background: rgb(255 255 255 / 80%);
-  padding: 20px 40px;
+  padding: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -195,8 +204,23 @@ p  { @extend %body; }
   z-index: 2500;
   max-height: 150px;
 
+  // Inner row constrained to the same content column as the sections below,
+  // so the logo + nav edges line up with the section content edges.
+  .header-inner {
+    width: 95%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   @media (max-width: 768px) {
-    padding: 12px 20px;
+    .header-inner {
+      width: 100%;
+      padding: 12px 20px;
+    }
     min-height: 70px;
 
     .logo {
