@@ -58,6 +58,42 @@
 --color-neutral-light: #C5CFE0;     /* Light building highlights - Subtle backgrounds */
 ```
 
+### Extended Color Palette
+
+**Extended Blues (Additional Shades)**
+
+```css
+/* Additional blue variations */
+--color-extended-blue-light: #99BFD8;      /* Light blue - subtle backgrounds, borders */
+--color-extended-blue-pale: #BFE5F2;       /* Very pale blue - light backgrounds */
+--color-extended-blue-medium: #668CBF;     /* Medium blue - accents, highlights */
+--color-extended-blue-dark: #3F66A5;       /* Dark blue - headers, strong accents */
+--color-extended-blue-navy: #193F8C;       /* Deep navy - dark headers, footers */
+```
+
+**Extended Greens & Olives**
+
+```css
+/* Olive and forest tones */
+--color-extended-olive-medium: #8CA566;    /* Medium olive - natural accents */
+--color-extended-olive-dark: #59724C;      /* Dark olive - earthy tones */
+--color-extended-olive-light: #B2BF7F;     /* Light olive - soft backgrounds */
+--color-extended-green-dark: #193319;      /* Deep forest green - dark sections */
+--color-extended-green-light: #BFD8B2;     /* Light sage green - backgrounds */
+--color-extended-green-forest: #3F5926;    /* Forest green - natural accents */
+```
+
+**Extended Neutrals**
+
+```css
+/* Additional neutral shades */
+--color-extended-navy-dark: #33334C;       /* Dark navy-gray - text, borders */
+--color-extended-gray-purple: #7F727F;     /* Purple-gray - secondary text */
+--color-extended-gray-light: #F2F2F2;      /* Very light gray - backgrounds */
+--color-extended-gray-blue: #99A5A5;       /* Blue-gray - tertiary elements */
+--color-extended-yellow-pale: #FFFFB2;     /* Pale yellow - highlights, accents */
+```
+
 ### Color Usage Guidelines
 
 - **Primary Actions:** Sky Medium (`#5A9BC5`) or Grass Medium (`#6B9B4A`) - buttons, CTAs
@@ -69,6 +105,9 @@
 - **Text on Dark:** White (`#FFFFFF`) or Sky Pale (`#E6F7FB`)
 - **Success States:** Grass Medium (`#6B9B4A`) or Grass Light (`#9BC865`)
 - **Hover States:** Water Light (`#8AC5E0`) or Grass Bright (`#C1D87A`)
+- **Extended Blues:** Use for additional variation in interfaces, charts, data visualization
+- **Extended Olives:** Natural, earthy tones for organic sections, sustainability messaging
+- **Extended Neutrals:** Subtle backgrounds, borders, and tertiary UI elements
 
 ---
 
@@ -931,6 +970,79 @@ background: rgba(24, 44, 64, 0.22);
 - Close (modal/menu)
 - External link
 - Download
+
+### Icon Library: Phosphor Icons
+
+**Selected Library:** [Phosphor Icons](https://phosphoricons.com)
+
+**Library Details:**
+- **License:** MIT (free for commercial use)
+- **Collection Size:** 7,488+ icons
+- **Weights Available:** 6 variations (thin, light, regular, bold, fill, duotone)
+- **Format:** Optimized SVG files
+- **Default Weight:** Regular (used across site)
+- **Version:** Latest stable
+
+**Why Phosphor Icons:**
+- Perfect alignment with mountain landscape aesthetic
+- Extensive collection covers all current and future needs
+- Multiple weights allow for visual hierarchy
+- Lightweight SVG files for optimal performance
+- Consistent design language across all icons
+- Active maintenance and regular updates
+
+**Implementation Guidelines:**
+
+1. **File Storage:**
+   - Store SVG files in `design-assets/` directory
+   - Copy to `dist/design-assets/` for production builds
+   - Use descriptive filenames matching icon purpose
+
+2. **HTML Structure:**
+   ```html
+   <div class="service-icon">
+     <img src="design-assets/icon-name.svg" alt="Descriptive text">
+   </div>
+   ```
+
+3. **CSS Styling:**
+   - Size control: `width: 64px; height: 64px;`
+   - Color control: `color: $sky-medium;` (icons use currentColor)
+   - Responsive sizing via media queries as needed
+
+4. **Accessibility:**
+   - Always include descriptive alt text
+   - Use semantic HTML structure
+   - Ensure sufficient color contrast
+
+**Currently Implemented Icons:**
+
+| Icon Name | File | Purpose | Location | Color |
+|-----------|------|---------|----------|-------|
+| `crosshair.svg` | Crosshair/Target | Strategic Marketing service card | Homepage services section | `$sky-medium` |
+| `device-mobile.svg` | Mobile Device | Digital Presence service card | Homepage services section | `$sky-medium` |
+| `chart-line-up.svg` | Upward Chart | Analytics & Insights service card | Homepage services section | `$sky-medium` |
+
+**Icon Selection Rationale:**
+- **Crosshair:** Represents precision targeting and strategic focus
+- **Device-Mobile:** Symbolizes responsive design and digital platforms
+- **Chart-Line-Up:** Conveys growth, metrics, and data-driven insights
+
+**Future Icon Needs:**
+- SEO (magnifying glass or search icon)
+- Social Media (network or share icon)
+- Content Creation (document or pen icon)
+- Brand Strategy (palette or lightbulb icon)
+- Navigation arrows for UI elements
+- Mobile menu hamburger icon
+
+**Best Practices:**
+1. Download icons at regular weight unless specific visual hierarchy needed
+2. Maintain consistent sizing within component groups
+3. Use `currentColor` for flexible theming
+4. Optimize SVG files (Phosphor icons come pre-optimized)
+5. Test icon visibility against all background colors
+6. Consider hover states and transitions for interactive icons
 
 ---
 

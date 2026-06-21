@@ -5,7 +5,7 @@ import '../styles/main.scss';
 // The About section now uses an inline SVG illustration (set via the HTML src
 // attribute, no JS swap) so it stays consistent with the hero's flat-vector style.
 import mountainLandscape from '../images/logo-1.png';
-import mhmLogo from '../images/mhm-logo.png';
+import mhmLogo from '../images/logo-active.png';  // canonical active brand mark — overwrite logo-active.png to swap
 
 import { initMobileMenu } from './mobile-menu';
 import { initFormHandler } from './form-handler';

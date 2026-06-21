@@ -303,6 +303,7 @@ p  { @extend %body; }
 // Logo Typography Variations
 
 // Variation 1: Clean Corporate (Default)
+// Wordmark colored to tie into the logo mark: "Mile High" navy, "Marketing Agency" green.
 .logo-style-1 {
   .logo-primary {
     font-family: 'Nunito', sans-serif;
@@ -314,9 +315,9 @@ p  { @extend %body; }
 
   .logo-secondary {
     font-family: 'Nunito', sans-serif;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 12px;
-    color: $water-medium;
+    color: $grass-medium;
     text-transform: uppercase;
     letter-spacing: 1px;
   }
@@ -666,6 +667,30 @@ p  { @extend %body; }
 .services-section {
   padding: 100px 0;
   background: $sky-pale;
+  position: relative;
+  overflow: hidden;
+
+  // Geometric accents — subtle angular shapes for a corporate-yet-artful feel
+  &::before {
+    content: '';
+    position: absolute;
+    top: -130px; right: -110px;
+    width: 460px; height: 460px;
+    background: rgba($sky-navy, 0.05);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); // diamond
+    transform: rotate(12deg);
+    z-index: 0;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -130px;
+    width: 420px; height: 420px;
+    background: rgba($grass-medium, 0.07);
+    clip-path: polygon(0 0, 100% 0, 0 100%); // triangle
+    z-index: 0;
+  }
+  .container { position: relative; z-index: 1; }
 
   @media (max-width: 768px) {
     padding: 60px 0;
@@ -673,9 +698,9 @@ p  { @extend %body; }
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-top: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 56px;
 
     @media (max-width: 768px) {
       gap: 24px;
@@ -684,43 +709,81 @@ p  { @extend %body; }
   }
 
   .service-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 20px;
-
-    @media (max-width: 768px) {
-      padding: 30px 24px;
-    }
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba($sky-navy, 0.08);
+    border: 1px solid rgba($sky-navy, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
 
     &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      transform: translateY(-8px);
+      box-shadow: 0 24px 48px rgba($sky-navy, 0.16);
+
+      .service-card__media img { transform: scale(1.06); }
     }
 
-    .service-icon {
-      margin-bottom: 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    &__media {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
 
       img {
-        width: 88px;
-        height: 88px;
+        width: 100%; height: 100%;
+        object-fit: cover; display: block;
+        transition: transform 0.6s ease;
       }
+      &::after {
+        content: '';
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba($sky-navy, 0) 45%, rgba($sky-navy, 0.35) 100%);
+      }
+    }
+
+    &__tag {
+      position: absolute; top: 14px; left: 14px; z-index: 2;
+      background: rgba(255, 255, 255, 0.92);
+      color: $sky-navy;
+      font-family: $font-body;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 6px 12px; border-radius: 6px;
+      backdrop-filter: blur(4px);
+    }
+
+    &__body {
+      padding: 26px 26px 28px;
+      flex: 1;
+      display: flex; flex-direction: column;
     }
 
     h3 {
       @extend %h3;
       color: $sky-navy;
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     p {
       @extend %body;
       color: $mountain-dark;
+      font-size: 15px; line-height: 1.6;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+
+    &__link {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: $grass-medium;
+      font-family: $font-body;
+      font-weight: 700; font-size: 13px;
+      text-transform: uppercase; letter-spacing: 0.04em;
+      text-decoration: none;
+
+      span { transition: transform 0.25s ease; }
+      &:hover span { transform: translateX(5px); }
     }
   }
 }
@@ -788,6 +851,53 @@ p  { @extend %body; }
   }
 
   .about-image {
+    // Brand composition — the badge logo overlaid on a gradient + geometric graphic panel
+    .brand-composition {
+      position: relative;
+      border-radius: 24px;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(140deg, $sky-navy 0%, $sky-medium 55%, $grass-medium 125%);
+      box-shadow: 0 24px 50px rgba($sky-navy, 0.28);
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 320px; height: 320px;
+        top: -90px; right: -70px;
+        background: rgba(255, 255, 255, 0.07);
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+        transform: rotate(15deg);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        width: 280px; height: 280px;
+        bottom: -100px; left: -80px;
+        background: rgba(255, 255, 255, 0.05);
+        clip-path: polygon(0 0, 100% 100%, 0 100%);
+      }
+
+      // Solid white disc behind the badge so it pops against the gradient (not washed out)
+      &__glow {
+        position: absolute;
+        z-index: 1;
+        width: 280px; height: 280px;
+        border-radius: 50%;
+        background: #ffffff;
+        box-shadow: 0 18px 44px rgba($sky-navy, 0.32);
+      }
+      &__badge {
+        position: relative;
+        z-index: 2;
+        width: 215px; max-width: 64%; height: auto;
+        filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.18));
+      }
+    }
+
     .placeholder-image {
       width: 100%;
       height: 300px;
