@@ -146,10 +146,11 @@ h3 { @extend %h3; color: $sky-navy; }
 h4 { @extend %h4; color: $sky-navy; }
 p  { @extend %body; }
 
-// Page Wrapper - Single centered ancestor for all sections
+// Page Wrapper - full-width so section BACKGROUNDS span edge-to-edge (like the hero).
+// Content stays contained by the inner .container (max-width below), not here.
 .page-wrapper {
-  width: 95%;
-  max-width: 1800px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -678,7 +679,9 @@ p  { @extend %body; }
 
 // Global Container - padding only, wrapper handles centering
 .container {
-  width: 100%;
+  width: 95%;
+  max-width: 1800px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
