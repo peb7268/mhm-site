@@ -9,6 +9,7 @@ import mhmLogo from '../images/logo-active.png';  // canonical active brand mark
 
 import { initMobileMenu } from './mobile-menu';
 import { initFormHandler } from './form-handler';
+import { initAnalyticsEvents } from './analytics-events';
 
 // Main JavaScript functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -46,7 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.querySelector('.contact-section')?.scrollIntoView({ behavior: 'smooth' });
                     break;
                 case 'phone':
-                    window.location.href = 'tel:+17208190314';
+                    // The tel: href is injected at runtime (analytics-events.js) so no
+                    // phone number is hard-coded here; falls back to the contact form.
+                    window.location.href = this.getAttribute('href') || '#contact';
                     break;
             }
         });
@@ -62,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Contact form submission (Formspree)
     initFormHandler();
+    initAnalyticsEvents();
 
     // Parallax effect for mountains
     let ticking = false;

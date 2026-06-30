@@ -12,7 +12,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 120px; // Account for fixed header
+  margin-top: 101px; // sit flush below the fixed 101px header
+
+    @media (max-width: 768px) {
+      margin-top: 70px; // mobile header height
+    }
 
   &__background {
     position: absolute;
@@ -69,62 +73,82 @@
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  padding: 100px 0;
+  gap: 24px;
+  padding: 64px 0;
 }
 
+// Photo-forward service cards (Option B): real photo + navy gradient overlay,
+// label overlaid, and a hover that lifts the card, zooms the photo, deepens the
+// overlay, and slides the name up to reveal an "Explore →" CTA.
 .service-card {
-  background: $white;
-  border-radius: 20px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 11;
+  border-radius: 16px;
+  overflow: hidden;
   text-decoration: none;
-  color: $mountain-dark;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    border-color: $sky-medium;
+    box-shadow: 0 24px 48px rgba($sky-navy, 0.22);
   }
 
-  &--highlighted {
-    background: linear-gradient(135deg, $sky-navy 0%, $sky-medium 100%);
+  &__media {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  &:hover &__media img { transform: scale(1.07); }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+      rgba($sky-navy, 0.9) 0%, rgba($sky-navy, 0.25) 55%, rgba($sky-navy, 0.05) 100%);
+    transition: background 0.3s ease;
+  }
+  &:hover &__overlay {
+    background: linear-gradient(to top,
+      rgba($sky-navy, 0.95) 0%, rgba($sky-navy, 0.5) 60%, rgba($sky-navy, 0.18) 100%);
+  }
+
+  &__name {
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 20px;
+    margin: 0;
     color: $white;
-    border-color: $water-medium;
-
-    .service-card__text {
-      color: $white;
-    }
-
-    &:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 15px 40px rgba(32, 69, 147, 0.3);
-    }
-  }
-
-  &__icon {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      width: 64px;
-      height: 64px;
-    }
-  }
-
-  &__text {
     font-size: 20px;
-    font-weight: 600;
-    color: $sky-navy;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: transform 0.3s ease;
+  }
+  &:hover &__name { transform: translateY(-26px); }
+
+  &__cta {
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    color: $sky-light;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  &:hover &__cta {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -174,6 +198,7 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
   }
 }

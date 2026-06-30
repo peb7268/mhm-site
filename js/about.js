@@ -4,10 +4,12 @@ import '../styles/about.scss';
 // Import images
 import aboutBackground from '../design-assets/about.png';
 import contactBackground from '../design-assets/df8ad352397ab4f77a08f18b3011241c6331cd01.png';
+import logoActive from '../images/logo-active.png';
 import mhmLogo from '../images/mhm-logo.png';
 
 import { initMobileMenu } from './mobile-menu';
 import { initFormHandler } from './form-handler';
+import { initAnalyticsEvents } from './analytics-events';
 
 // Main JavaScript functionality for about page
 document.addEventListener('DOMContentLoaded', function() {
@@ -19,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactSectionBackground) contactSectionBackground.src = contactBackground;
 
     const logoImage = document.querySelector('.logo-image');
-    if (logoImage) logoImage.src = mhmLogo;
+    if (logoImage) logoImage.src = logoActive;
 
     const footerLogoImage = document.querySelector('.footer-logo-image');
     if (footerLogoImage) footerLogoImage.src = mhmLogo;
@@ -35,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Contact form submission (Formspree)
     initFormHandler();
+    initAnalyticsEvents();
 
     // Mobile menu
     initMobileMenu();

@@ -7,6 +7,7 @@ import authorAvatar from '../design-assets/a0aa414672cfcc531f40b69d6eeced4343a9f
 import commentsBackground from '../design-assets/83442bbb6582cce07ce04dbdbf4fe97eacec4a4e.png';
 import commentAvatar from '../design-assets/2c96d0e2239d065415da2c12aab03f4665e652c2.png';
 import starIcon from '../design-assets/66c7453016cf191ec6b7893725b32f65af45eabd.svg';
+import logoActive from '../images/logo-active.png';
 import mhmLogo from '../images/mhm-logo.png';
 
 import { initMobileMenu } from './mobile-menu';
@@ -99,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
     starIcons.forEach(icon => { icon.src = starIcon; });
 
     const logoImage = document.querySelector('.logo-image');
-    if (logoImage) logoImage.src = mhmLogo;
+    if (logoImage) logoImage.src = logoActive;
 
     const footerLogoImage = document.querySelector('.footer-logo-image');
     if (footerLogoImage) footerLogoImage.src = mhmLogo;

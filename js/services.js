@@ -3,10 +3,12 @@ import '../styles/services.scss';
 
 // Import images
 import servicesBackground from '../design-assets/services-2.png';
+import logoActive from '../images/logo-active.png';
 import mhmLogo from '../images/mhm-logo.png';
 
 import { initMobileMenu } from './mobile-menu';
 import { initFormHandler } from './form-handler';
+import { initAnalyticsEvents } from './analytics-events';
 
 // Main JavaScript functionality for services page
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (servicesHeroBackground) servicesHeroBackground.src = servicesBackground;
 
     const logoImage = document.querySelector('.logo-image');
-    if (logoImage) logoImage.src = mhmLogo;
+    if (logoImage) logoImage.src = logoActive;
 
     const footerLogoImage = document.querySelector('.footer-logo-image');
     if (footerLogoImage) footerLogoImage.src = mhmLogo;
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Contact form submission (Formspree)
     initFormHandler();
+    initAnalyticsEvents();
 
     // Mobile menu
     initMobileMenu();

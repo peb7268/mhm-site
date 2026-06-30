@@ -6,10 +6,12 @@ import '../styles/work.scss';
 // served directly from images/illustrations/ via the HTML src attribute,
 // so no JS hard-set is needed.
 import aboutBackground from '../design-assets/about.png';
+import logoActive from '../images/logo-active.png';
 import mhmLogo from '../images/mhm-logo.png';
 
 import { initMobileMenu } from './mobile-menu';
 import { initFormHandler } from './form-handler';
+import { initAnalyticsEvents } from './analytics-events';
 
 // Main JavaScript functionality for work page
 document.addEventListener('DOMContentLoaded', function() {
@@ -18,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (aboutHeroBackground) aboutHeroBackground.src = aboutBackground;
 
     const logoImage = document.querySelector('.logo-image');
-    if (logoImage) logoImage.src = mhmLogo;
+    if (logoImage) logoImage.src = logoActive;
 
     const footerLogoImage = document.querySelector('.footer-logo-image');
     if (footerLogoImage) footerLogoImage.src = mhmLogo;
@@ -34,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Contact form submission (Formspree)
     initFormHandler();
+    initAnalyticsEvents();
 
     // Mobile menu
     initMobileMenu();
