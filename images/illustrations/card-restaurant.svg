@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E6F7FB"/>
+      <stop offset="1" stop-color="#B0E0E6"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#sky)"/>
+  <!-- distant mountain silhouette -->
+  <path d="M0 280 L80 220 L160 260 L240 200 L340 250 L440 210 L540 240 L600 220 L600 400 L0 400 Z"
+        fill="#B5C4D8" opacity="0.45"/>
+  <path d="M0 320 L100 270 L180 290 L280 250 L380 290 L480 260 L600 280 L600 400 L0 400 Z"
+        fill="#8AC5E0" opacity="0.5"/>
+
+    <!-- tablet -->
+    <rect x="100" y="80" width="400" height="270" rx="14" fill="#2C5F7F"/>
+    <rect x="115" y="95" width="370" height="240" rx="6" fill="#FFF8E6"/>
+    <!-- banner -->
+    <rect x="115" y="95" width="370" height="70" rx="6" fill="#204593"/>
+    <rect x="135" y="112" width="120" height="14" rx="3" fill="#FFFFFF"/>
+    <rect x="135" y="132" width="180" height="6" rx="2" fill="#8AC5E0"/>
+    <rect x="395" y="120" width="70" height="22" rx="11" fill="#FFA033"/>
+    <!-- menu items -->
+    <rect x="135" y="184" width="160" height="60" rx="6" fill="#FFFFFF"/>
+    <circle cx="155" cy="214" r="14" fill="#FFA033"/>
+    <rect x="178" y="200" width="100" height="6" rx="2" fill="#204593"/>
+    <rect x="178" y="212" width="80" height="4" rx="2" fill="#8095AD"/>
+    <rect x="178" y="224" width="40" height="6" rx="2" fill="#2C5F7F"/>
+    <rect x="305" y="184" width="160" height="60" rx="6" fill="#FFFFFF"/>
+    <circle cx="325" cy="214" r="14" fill="#6B9B4A"/>
+    <rect x="348" y="200" width="100" height="6" rx="2" fill="#204593"/>
+    <rect x="348" y="212" width="80" height="4" rx="2" fill="#8095AD"/>
+    <rect x="348" y="224" width="40" height="6" rx="2" fill="#2C5F7F"/>
+    <rect x="135" y="258" width="160" height="60" rx="6" fill="#FFFFFF"/>
+    <circle cx="155" cy="288" r="14" fill="#FF8A7A"/>
+    <rect x="178" y="274" width="100" height="6" rx="2" fill="#204593"/>
+    <rect x="178" y="286" width="80" height="4" rx="2" fill="#8095AD"/>
+    <rect x="178" y="298" width="40" height="6" rx="2" fill="#2C5F7F"/>
+    <rect x="305" y="258" width="160" height="60" rx="6" fill="#FFFFFF"/>
+    <circle cx="325" cy="288" r="14" fill="#5A9BC5"/>
+    <rect x="348" y="274" width="100" height="6" rx="2" fill="#204593"/>
+    <rect x="348" y="286" width="80" height="4" rx="2" fill="#8095AD"/>
+    <rect x="348" y="298" width="40" height="6" rx="2" fill="#2C5F7F"/>
+    </svg>

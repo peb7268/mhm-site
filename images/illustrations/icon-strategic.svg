@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" preserveAspectRatio="xMidYMid slice">
+    <circle cx="80" cy="80" r="80" fill="#E6F7FB"/>
+    <!-- back mountain -->
+    <path d="M14 130 L52 70 L86 110 L120 75 L146 130 Z" fill="#8095AD"/>
+    <!-- front mountain (snow cap) -->
+    <path d="M30 130 L70 50 L110 130 Z" fill="#5A9BC5"/>
+    <path d="M55 80 L70 50 L85 80 L78 88 L70 84 L62 90 Z" fill="#FFFFFF"/>
+    <!-- flag pole + flag -->
+    <line x1="70" y1="50" x2="70" y2="22" stroke="#204593" stroke-width="2.5"/>
+    <path d="M70 22 L92 28 L70 36 Z" fill="#FFA033"/>
+    </svg>

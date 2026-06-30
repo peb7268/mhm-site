@@ -1,13 +1,15 @@
 // Import SCSS
 import '../styles/main.scss';
 
-// Import the mountain landscape image, logo, and Denver skyline
+// Hero illustration (logo-1.png is the panoramic mountain landscape) + brand logo.
+// The About section now uses an inline SVG illustration (set via the HTML src
+// attribute, no JS swap) so it stays consistent with the hero's flat-vector style.
 import mountainLandscape from '../images/logo-1.png';
-import mhmLogo from '../images/mhm-logo.png';
-import denverSkyline from '../images/denver-skyline-option-3.jpg';
+import mhmLogo from '../images/logo-active.png';  // canonical active brand mark — overwrite logo-active.png to swap
 
 import { initMobileMenu } from './mobile-menu';
 import { initFormHandler } from './form-handler';
+import { initAnalyticsEvents } from './analytics-events';
 
 // Main JavaScript functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -17,9 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const logoImage = document.querySelector('.logo-image');
     if (logoImage) logoImage.src = mhmLogo;
-
-    const skylineImage = document.querySelector('.skyline-image');
-    if (skylineImage) skylineImage.src = denverSkyline;
 
     // Review buttons
     const reviewButtons = document.querySelectorAll('.review-btn');
@@ -48,7 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.querySelector('.contact-section')?.scrollIntoView({ behavior: 'smooth' });
                     break;
                 case 'phone':
-                    window.location.href = 'tel:+17208190314';
+                    // The tel: href is injected at runtime (analytics-events.js) so no
+                    // phone number is hard-coded here; falls back to the contact form.
+                    window.location.href = this.getAttribute('href') || '#contact';
                     break;
             }
         });
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Contact form submission (Formspree)
     initFormHandler();
+    initAnalyticsEvents();
 
     // Parallax effect for mountains
     let ticking = false;

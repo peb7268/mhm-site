@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" preserveAspectRatio="xMidYMid slice">
+    <circle cx="80" cy="80" r="80" fill="#E6F7FB"/>
+    <!-- phone -->
+    <rect x="55" y="32" width="50" height="90" rx="8" fill="#2C5F7F"/>
+    <rect x="59" y="36" width="42" height="82" rx="4" fill="#FFFFFF"/>
+    <rect x="76" y="38" width="8" height="2" rx="1" fill="#2C5F7F"/>
+    <!-- screen content -->
+    <rect x="63" y="46" width="34" height="6" rx="2" fill="#204593"/>
+    <rect x="63" y="56" width="34" height="20" rx="3" fill="#5A9BC5"/>
+    <rect x="63" y="80" width="34" height="6" rx="2" fill="#B5C4D8"/>
+    <rect x="63" y="90" width="22" height="6" rx="2" fill="#B5C4D8"/>
+    <!-- signal/wave waves emanating right -->
+    <path d="M118 50 Q128 60 118 70" stroke="#5A9BC5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M124 42 Q140 60 124 78" stroke="#5A9BC5" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+    <path d="M130 34 Q150 60 130 86" stroke="#5A9BC5" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+    </svg>

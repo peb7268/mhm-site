@@ -127,6 +127,12 @@ module.exports = (env, argv) => {
         patterns: [
           { from: 'design-assets/*.svg', to: '[path][name][ext]' },
           { from: 'design-assets/*.png', to: '[path][name][ext]' },
+          { from: 'images/illustrations/*.svg', to: '[path][name][ext]' },
+          // Copy the entire images/ tree (logos, photos/, etc.). These are referenced
+          // directly in HTML <img> tags and are NOT handled by the asset/resource rule
+          // (that only processes images imported in JS/SCSS). force:false (default) means
+          // it won't clobber anything the asset pipeline already emitted.
+          { from: 'images', to: 'images' },
           { from: 'static/robots.txt', to: 'robots.txt' },
           { from: 'static/sitemap.xml', to: 'sitemap.xml' },
           { from: 'images/mhm-logo.png', to: 'favicon.png' },

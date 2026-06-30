@@ -4,25 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mile High Marketing - Choose Your Customers</title>
-    <meta name="description" content="What if you could choose your customers instead of them choosing you?">
+    <meta name="description" content="Mile High Marketing helps Denver businesses choose their customers with data-driven web development, SEO, and digital marketing strategies.">
+    <link rel="canonical" href="https://milehighmarketing.dev/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mile High Marketing - Choose Your Customers">
+    <meta property="og:description" content="Mile High Marketing helps Denver businesses choose their customers with data-driven web development, SEO, and digital marketing strategies.">
+    <meta property="og:url" content="https://milehighmarketing.dev/">
+    <meta property="og:site_name" content="Mile High Marketing">
+    <meta property="og:image" content="https://milehighmarketing.dev/images/mhm-logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mile High Marketing - Choose Your Customers">
+    <meta name="twitter:description" content="Mile High Marketing helps Denver businesses choose their customers with data-driven web development, SEO, and digital marketing strategies.">
+    <meta name="twitter:image" content="https://milehighmarketing.dev/images/mhm-logo.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Mile High Marketing",
+      "description": "Denver-based digital marketing agency specializing in web development, SEO, social media marketing, and brand creation.",
+      "url": "https://milehighmarketing.dev",
+      "telephone": "+1-720-819-0314",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Denver",
+        "addressRegion": "CO",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 39.7392,
+          "longitude": -104.9903
+        },
+        "geoRadius": "50"
+      },
+      "sameAs": [
+        "https://facebook.com"
+      ],
+      "foundingDate": "2008",
+      "priceRange": "$$"
+    }
+    </script>
 <script defer src="js/main.js"></script><link href="styles/main.css" rel="stylesheet"></head>
 <body>
+<div class="page-wrapper">
     <div class="hero-container">
         <!-- Header Navigation -->
         <header class="header">
-            <div class="logo logo-style-1">
-                <img src="images/mhm-logo.png" alt="Mile High Marketing Logo" class="logo-image">
+          <div class="header-inner">
+            <a href="index.html" class="logo logo-style-1">
+                <img src="images/logo-A2.png?v=2" alt="Mile High Marketing Logo" class="logo-image">
                 <div class="logo-text">
                     <span class="logo-primary">Mile High</span>
                     <span class="logo-secondary">Marketing Agency</span>
                 </div>
-            </div>
+            </a>
             <nav class="nav-menu">
-                <button class="nav-button">ABOUT</button>
-                <button class="nav-button">INSIGHTS</button>
-                <button class="nav-button">SERVICES</button>
+                <a href="html/about.html" class="nav-button">ABOUT</a>
+                <a href="html/insights.html" class="nav-button">INSIGHTS</a>
+                <a href="html/services.html" class="nav-button">SERVICES</a>
+                <a href="html/work.html" class="nav-button">WORK</a>
             </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+          </div>
         </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay">
+            <nav class="mobile-nav">
+                <a href="html/about.html" class="mobile-nav-link">ABOUT</a>
+                <a href="html/insights.html" class="mobile-nav-link">INSIGHTS</a>
+                <a href="html/services.html" class="mobile-nav-link">SERVICES</a>
+                <a href="html/work.html" class="mobile-nav-link">WORK</a>
+                <a href="#contact" class="mobile-nav-cta">Get Free Strategy</a>
+            </nav>
+        </div>
 
         <!-- Mountain Landscape Background -->
         <div class="landscape-background">
@@ -51,9 +122,9 @@
                     </div>
                 </div>
                 <div class="social-icons">
-                    <a href="#" class="social-icon facebook">f</a>
-                    <a href="#" class="social-icon email">@</a>
-                    <a href="#" class="social-icon phone">📞</a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon facebook">f</a>
+                    <a href="#contact" class="social-icon email">@</a>
+                    <a href="tel:+17208190314" class="social-icon phone">P</a>
                 </div>
             </div>
 
@@ -68,19 +139,37 @@
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🎯</div>
-                    <h3>Strategic Marketing</h3>
-                    <p>Data-driven marketing strategies that connect you with your ideal customers and drive measurable results.</p>
+                    <div class="service-card__media">
+                        <img src="images/photos/strategic.jpg" alt="Strategic Marketing" loading="lazy">
+                        <span class="service-card__tag">Strategy</span>
+                    </div>
+                    <div class="service-card__body">
+                        <h3>Strategic Marketing</h3>
+                        <p>Data-driven marketing strategies that connect you with your ideal customers and drive measurable results.</p>
+                        <a href="html/services.html" class="service-card__link">Learn more <span>&rarr;</span></a>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3>Digital Presence</h3>
-                    <p>Professional websites and social media management that showcase your brand and engage your audience.</p>
+                    <div class="service-card__media">
+                        <img src="images/photos/digital.jpg" alt="Digital Presence" loading="lazy">
+                        <span class="service-card__tag">Web &amp; Social</span>
+                    </div>
+                    <div class="service-card__body">
+                        <h3>Digital Presence</h3>
+                        <p>Professional websites and social media management that showcase your brand and engage your audience.</p>
+                        <a href="html/services.html" class="service-card__link">Learn more <span>&rarr;</span></a>
+                    </div>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Analytics & Insights</h3>
-                    <p>Track performance and optimize campaigns with comprehensive reporting and data analysis.</p>
+                    <div class="service-card__media">
+                        <img src="images/photos/analytics.jpg" alt="Analytics &amp; Insights" loading="lazy">
+                        <span class="service-card__tag">Analytics</span>
+                    </div>
+                    <div class="service-card__body">
+                        <h3>Analytics &amp; Insights</h3>
+                        <p>Track performance and optimize campaigns with comprehensive reporting and data analysis.</p>
+                        <a href="html/services.html" class="service-card__link">Learn more <span>&rarr;</span></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -116,8 +205,109 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="images/denver-skyline-option-3.jpg" alt="Denver Skyline" class="skyline-image">
+                    <div class="brand-composition">
+                        <span class="brand-composition__glow"></span>
+                        <img src="images/logo-badge.png" alt="Mile High Marketing" class="brand-composition__badge">
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Work Section -->
+    <section class="work-section">
+        <div class="container">
+            <h2 class="section-title">Our Work</h2>
+            <p class="work-intro">
+                We take pride in delivering exceptional results for our clients. Here's a glimpse of some projects we've brought to life.
+            </p>
+            <div class="work-grid">
+                <!-- Work Card 1 -->
+                <a href="html/work.html" class="work-card">
+                    <div class="work-card__image">
+                        <img src="images/photos/work-ecommerce.jpg" alt="E-Commerce Platform">
+                        <div class="work-card__overlay">
+                            <span class="work-card__cta">View Project →</span>
+                        </div>
+                    </div>
+                    <div class="work-card__content">
+                        <h3 class="work-card__title">Premium E-Commerce Platform</h3>
+                        <p class="work-card__category">Retail & E-Commerce</p>
+                    </div>
+                </a>
+
+                <!-- Work Card 2 -->
+                <a href="html/work.html" class="work-card">
+                    <div class="work-card__image">
+                        <img src="images/photos/work-corporate.jpg" alt="Corporate Website">
+                        <div class="work-card__overlay">
+                            <span class="work-card__cta">View Project →</span>
+                        </div>
+                    </div>
+                    <div class="work-card__content">
+                        <h3 class="work-card__title">Corporate Website Redesign</h3>
+                        <p class="work-card__category">Professional Services</p>
+                    </div>
+                </a>
+
+                <!-- Work Card 3 -->
+                <a href="html/work.html" class="work-card">
+                    <div class="work-card__image">
+                        <img src="images/photos/work-saas.jpg" alt="Business Application" style="object-position: top;">
+                        <div class="work-card__overlay">
+                            <span class="work-card__cta">View Project →</span>
+                        </div>
+                    </div>
+                    <div class="work-card__content">
+                        <h3 class="work-card__title">Custom Business Application</h3>
+                        <p class="work-card__category">SaaS & Technology</p>
+                    </div>
+                </a>
+
+                <!-- Work Card 4 -->
+                <a href="html/work.html" class="work-card">
+                    <div class="work-card__image">
+                        <img src="images/photos/work-marketing.jpg" alt="Digital Marketing">
+                        <div class="work-card__overlay">
+                            <span class="work-card__cta">View Project →</span>
+                        </div>
+                    </div>
+                    <div class="work-card__content">
+                        <h3 class="work-card__title">Digital Marketing Campaign</h3>
+                        <p class="work-card__category">Marketing & Advertising</p>
+                    </div>
+                </a>
+
+                <!-- Work Card 5 -->
+                <a href="html/work.html" class="work-card">
+                    <div class="work-card__image">
+                        <img src="images/photos/work-homecare.jpg" alt="Joyful Living Home Care">
+                        <div class="work-card__overlay">
+                            <span class="work-card__cta">View Project →</span>
+                        </div>
+                    </div>
+                    <div class="work-card__content">
+                        <h3 class="work-card__title">Home Care Web Platform</h3>
+                        <p class="work-card__category">Healthcare & Home Care</p>
+                    </div>
+                </a>
+
+                <!-- Work Card 6 -->
+                <a href="html/work.html" class="work-card">
+                    <div class="work-card__image">
+                        <img src="images/photos/work-brand.jpg" alt="Brand Identity">
+                        <div class="work-card__overlay">
+                            <span class="work-card__cta">View Project →</span>
+                        </div>
+                    </div>
+                    <div class="work-card__content">
+                        <h3 class="work-card__title">Brand Identity Package</h3>
+                        <p class="work-card__category">Branding & Design</p>
+                    </div>
+                </a>
+            </div>
+            <div class="work-cta">
+                <a href="html/work.html" class="btn btn--primary">View All Projects</a>
             </div>
         </div>
     </section>
@@ -133,26 +323,21 @@
                     </p>
                     <div class="contact-methods">
                         <div class="contact-method">
-                            <span class="contact-icon">📞</span>
-                            <span class="contact-text">(303) 555-0123</span>
+                            <a href="tel:+17208190314" class="contact-text" style="text-decoration: none; color: inherit;">(720) 819-0314</a>
                         </div>
                         <div class="contact-method">
-                            <span class="contact-icon">✉️</span>
-                            <span class="contact-text">hello@milehighmarketing.com</span>
-                        </div>
-                        <div class="contact-method">
-                            <span class="contact-icon">📍</span>
                             <span class="contact-text">Denver, Colorado</span>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
                     <h3>Get Your Free Strategy Session</h3>
-                    <form class="strategy-form">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="text" placeholder="Your Business">
-                        <textarea placeholder="Tell us about your goals" rows="4"></textarea>
+                    <form class="strategy-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <input type="hidden" name="_subject" value="New Strategy Session Request">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="business" placeholder="Your Business">
+                        <textarea name="message" placeholder="Tell us about your goals" rows="4"></textarea>
                         <button type="submit" class="submit-button">Get My Free Strategy</button>
                     </form>
                 </div>
@@ -171,33 +356,33 @@
                     <div class="footer-column">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="#strategic-marketing">Strategic Marketing</a></li>
-                            <li><a href="#digital-presence">Digital Presence</a></li>
-                            <li><a href="#analytics">Analytics & Insights</a></li>
+                            <li><a href="html/services/web-development.html">Web Development</a></li>
+                            <li><a href="html/services/search-engine-optimization.html">SEO</a></li>
+                            <li><a href="html/services/social-media-marketing.html">Social Media</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Company</h4>
                         <ul>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#insights">Insights</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="html/about.html">About Us</a></li>
+                            <li><a href="html/insights.html">Insights</a></li>
+                            <li><a href="html/work.html">Our Work</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Connect</h4>
                         <ul>
-                            <li><a href="#facebook">Facebook</a></li>
-                            <li><a href="#linkedin">LinkedIn</a></li>
-                            <li><a href="#twitter">Twitter</a></li>
+                            <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+                            <li><a href="tel:+17208190314">Phone</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Mile High Marketing. All rights reserved.</p>
+                <p>&copy; 2026 Mile High Marketing. All rights reserved.</p>
             </div>
         </div>
     </footer>
+</div>
 </body>
 </html>

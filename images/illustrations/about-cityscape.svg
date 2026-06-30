@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="dsky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#E6F7FB"/>
+        <stop offset="0.7" stop-color="#B0E0E6"/>
+        <stop offset="1" stop-color="#8AC5E0"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="500" fill="url(#dsky)"/>
+    <!-- distant mountains -->
+    <path d="M0 280 L100 210 L200 240 L320 180 L420 220 L540 170 L660 210 L800 190 L800 320 L0 320 Z"
+          fill="#8095AD" opacity="0.55"/>
+    <!-- snow caps -->
+    <path d="M310 185 L320 180 L334 196 L325 198 L320 192 L312 198 Z" fill="#FFFFFF"/>
+    <path d="M530 175 L540 170 L555 192 L548 196 L540 188 L532 196 Z" fill="#FFFFFF"/>
+    <!-- mid mountains darker -->
+    <path d="M0 340 L120 270 L240 300 L380 240 L500 290 L640 250 L800 280 L800 360 L0 360 Z"
+          fill="#5A9BC5" opacity="0.55"/>
+    <!-- sun glow -->
+    <circle cx="600" cy="180" r="40" fill="#FFA033" opacity="0.5"/>
+    <circle cx="600" cy="180" r="22" fill="#FFA033" opacity="0.85"/>
+    <!-- city skyline (Denver-ish) -->
+    <g fill="#204593">
+      <rect x="240" y="290" width="32" height="80"/>
+      <rect x="278" y="270" width="40" height="100"/>
+      <rect x="324" y="260" width="28" height="110"/>
+      <rect x="358" y="240" width="44" height="130"/>   <!-- Republic Plaza tall -->
+      <polygon points="358,240 380,210 402,240"/>      <!-- pointed top -->
+      <rect x="408" y="280" width="34" height="90"/>
+      <rect x="448" y="260" width="40" height="110"/>
+      <polygon points="468,260 468,230 480,230 480,260"/>  <!-- spire -->
+      <rect x="494" y="290" width="30" height="80"/>
+      <rect x="530" y="270" width="38" height="100"/>
+    </g>
+    <!-- skyline windows -->
+    <g fill="#8AC5E0" opacity="0.85">
+      <rect x="246" y="300" width="4" height="6"/>
+      <rect x="256" y="300" width="4" height="6"/>
+      <rect x="246" y="316" width="4" height="6"/>
+      <rect x="256" y="316" width="4" height="6"/>
+      <rect x="284" y="282" width="4" height="6"/>
+      <rect x="294" y="282" width="4" height="6"/>
+      <rect x="304" y="282" width="4" height="6"/>
+      <rect x="284" y="298" width="4" height="6"/>
+      <rect x="294" y="298" width="4" height="6"/>
+      <rect x="304" y="298" width="4" height="6"/>
+      <rect x="368" y="260" width="5" height="7"/>
+      <rect x="380" y="260" width="5" height="7"/>
+      <rect x="392" y="260" width="5" height="7"/>
+      <rect x="368" y="280" width="5" height="7"/>
+      <rect x="380" y="280" width="5" height="7"/>
+      <rect x="392" y="280" width="5" height="7"/>
+      <rect x="368" y="300" width="5" height="7"/>
+      <rect x="380" y="300" width="5" height="7"/>
+      <rect x="392" y="300" width="5" height="7"/>
+      <rect x="540" y="290" width="5" height="7"/>
+      <rect x="552" y="290" width="5" height="7"/>
+      <rect x="540" y="306" width="5" height="7"/>
+      <rect x="552" y="306" width="5" height="7"/>
+    </g>
+    <!-- foreground rolling green hills -->
+    <path d="M0 380 Q200 340 400 380 T800 370 L800 500 L0 500 Z"
+          fill="#6B9B4A"/>
+    <path d="M0 420 Q160 390 320 420 T640 415 T800 410 L800 500 L0 500 Z"
+          fill="#234D2A" opacity="0.7"/>
+    <!-- river snaking through -->
+    <path d="M340 372 Q400 390 460 380 T600 386 T780 388"
+          stroke="#5A9BC5" stroke-width="14" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <!-- pine trees -->
+    <g fill="#234D2A">
+      <polygon points="80,400 60,440 100,440"/>
+      <polygon points="80,380 65,420 95,420"/>
+      <rect x="77" y="436" width="6" height="10"/>
+      <polygon points="160,420 142,460 178,460"/>
+      <rect x="157" y="456" width="6" height="10"/>
+      <polygon points="700,415 680,460 720,460"/>
+      <polygon points="700,395 685,425 715,425"/>
+      <rect x="697" y="456" width="6" height="10"/>
+    </g>
+    </svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E6F7FB"/>
+      <stop offset="1" stop-color="#B0E0E6"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#sky)"/>
+  <!-- distant mountain silhouette -->
+  <path d="M0 280 L80 220 L160 260 L240 200 L340 250 L440 210 L540 240 L600 220 L600 400 L0 400 Z"
+        fill="#B5C4D8" opacity="0.45"/>
+  <path d="M0 320 L100 270 L180 290 L280 250 L380 290 L480 260 L600 280 L600 400 L0 400 Z"
+        fill="#8AC5E0" opacity="0.5"/>
+
+    <!-- phone frame -->
+    <rect x="190" y="60" width="160" height="290" rx="22" fill="#2C5F7F"/>
+    <rect x="200" y="70" width="140" height="270" rx="14" fill="#FFFFFF"/>
+    <rect x="245" y="76" width="50" height="6" rx="3" fill="#2C5F7F"/>
+    <!-- header -->
+    <rect x="210" y="92" width="120" height="34" rx="6" fill="#204593"/>
+    <circle cx="225" cy="109" r="9" fill="#5A9BC5"/>
+    <rect x="240" y="103" width="80" height="5" rx="2" fill="#FFFFFF"/>
+    <rect x="240" y="113" width="60" height="4" rx="2" fill="#FFFFFF" opacity="0.6"/>
+    <!-- post 1 -->
+    <rect x="210" y="135" width="120" height="58" rx="6" fill="#E6F7FB"/>
+    <rect x="216" y="141" width="50" height="46" rx="4" fill="#5A9BC5"/>
+    <rect x="272" y="145" width="52" height="6" rx="2" fill="#204593"/>
+    <rect x="272" y="159" width="44" height="4" rx="2" fill="#8095AD"/>
+    <rect x="272" y="170" width="36" height="4" rx="2" fill="#8095AD"/>
+    <!-- post 2 -->
+    <rect x="210" y="201" width="120" height="58" rx="6" fill="#E6F7FB"/>
+    <rect x="216" y="207" width="50" height="46" rx="4" fill="#6B9B4A"/>
+    <rect x="272" y="211" width="52" height="6" rx="2" fill="#204593"/>
+    <rect x="272" y="225" width="44" height="4" rx="2" fill="#8095AD"/>
+    <rect x="272" y="236" width="36" height="4" rx="2" fill="#8095AD"/>
+    <!-- engagement bar -->
+    <rect x="210" y="270" width="120" height="40" rx="6" fill="#FFFFFF"/>
+    <circle cx="225" cy="290" r="8" fill="#FF8A7A"/>
+    <circle cx="245" cy="290" r="8" fill="#5A9BC5"/>
+    <circle cx="265" cy="290" r="8" fill="#FFA033"/>
+    <rect x="282" y="287" width="42" height="6" rx="3" fill="#8095AD"/>
+    <!-- floating notifications -->
+    <circle cx="120" cy="130" r="32" fill="#FFA033"/>
+    <text x="120" y="138" font-family="Arial" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">+24</text>
+    <circle cx="430" cy="220" r="28" fill="#6B9B4A"/>
+    <text x="430" y="227" font-family="Arial" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">5x</text>
+    </svg>

@@ -10,3 +10,5 @@ dist
 .env.production
 .env.staging
 .env.development
+.playwright-mcp/
+homepage-*.png
