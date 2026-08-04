@@ -1,0 +1,1 @@
+- R1 (pond under dome): presented A calm-ripples / B fanned-ripples / C reflection / D bold-glyph — awaiting pick. see round-1/ROUND.md
