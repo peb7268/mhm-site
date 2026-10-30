@@ -165,10 +165,51 @@
   &__tags {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 10px;
     margin-top: 15px;
     padding-top: 20px;
     border-top: 1px solid $mountain-light;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 15px;
+    padding-top: 20px;
+    border-top: 1px solid $mountain-light;
+
+    .portfolio-card__tags {
+      flex: 1;
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+  }
+
+  &__link {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: $sky-pale;
+    color: $sky-navy;
+    transition: all 0.3s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      background: $sky-navy;
+      color: $white;
+      transform: translateX(3px);
+    }
   }
 }
 
